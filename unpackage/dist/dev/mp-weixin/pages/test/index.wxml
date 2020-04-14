@@ -1,0 +1,1 @@
+<view class="test">测试页<view data-event-opts="{{[['tap',[['wxpay',['$event']]]]]}}" bindtap="__e">支付</view></view>

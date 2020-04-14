@@ -1,0 +1,281 @@
+/* 公共样式 */
+.addcommontitle {
+	text-align: left ;
+}
+
+.addcommontitle span {
+	margin: 0 2.43upx;
+}
+
+.addcommontitle span:first-child {
+	display: inline-block;
+	width: 73upx;
+	height: 0.7upx;
+	line-height: 0.7upx;
+	vertical-align: middle;
+	background-color: #e2e2e2;
+}
+
+.addcommontitle span:last-child {
+	display: inline-block;
+	width: 73upx;
+	height: 0.7upx;
+	line-height: 0.7upx;
+	vertical-align: middle;
+	background-color: #e2e2e2; 
+}
+
+.closeline {
+	display: inline !important;
+	background-color: #ffffff !important;
+	font-size: 12upx;
+}
+
+.addtitletext {
+	font-size: 32upx;
+	text-align: left !important;
+	padding: 35upx 20upx;
+	margin: 0 !important;
+
+
+}
+.addtitletext>image{
+	margin-left: 5upx;
+	width: 75upx;
+	height: 20upx;
+}
+.addtitlemargin {
+	padding-right: 10upx !important;
+}
+.indexinfotext{padding: 30upx;line-height: 40upx;}
+/* 顶部导航 */
+.add-header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: space-between;
+	top: 4.86upx;
+	background-color: #fff;
+	width: 358upx;
+	height: 48.6upx;
+	z-index: 99;
+	left: 15.55upx;
+	border-radius: 4.8upx;
+	box-shadow: 0 0 10px #2d8afe;
+	color: #585858;
+	font-size: 14upx;
+	overflow: hidden;
+}
+.add-footer{top: initial;bottom: 0.2133rem;z-index: 99999;}
+
+.add-login {
+	width: 24.3upx;
+	margin: 0 10upx 0 15.55upx;
+}
+.add-header p{
+	padding: 15.55upx 0 15.55upx 15.55upx;
+	height: 17upx;
+	background: #2d8afe;
+    color: #fff;
+	width: 82.62upx;
+	
+}
+
+/* 组件样式 */
+.add {
+	/* margin-bottom: 5rem; */
+}
+
+.addheader {
+	position: relative;
+}
+
+.addheader>img {
+	width: 100%;
+}
+
+.addheader>ul {
+	position: absolute;
+	bottom: -135rpx;
+	right: 24upx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-around;
+	width: 700upx;
+	padding: 50upx 0;
+	border-radius: 10upx;
+	box-shadow: 0px 0px 10upx #888888;
+	background: #fff;
+	z-index: 10;
+}
+
+.addheader>ul>li {
+	text-align: center;
+}
+
+.addheader li p:first-child {
+	font-size: 32upx;
+	color: #2d8afe;
+	line-height: 36.5upx;
+	margin-bottom: 15upx;
+}.addheader li p:last-child{
+	font-size: 22upx;
+	color: #bebebe;
+}
+/* 双向选择 */
+.adddouble{
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 90px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	height: 115rpx;
+	background: #ffffff;
+
+}
+.adddouble>view{
+	text-align: center;
+	
+	height: 80upx;
+	line-height: 80upx;
+	width:50%;
+}
+.adddouble>view:last-child{
+	border-left:1px solid #bebebe;
+}
+.adddouble image{
+	margin-right: 5rpx;
+	height:80upx;
+	width: 95upx;
+	vertical-align: middle;
+}
+.adddouble text{
+	vertical-align: middle;
+	margin-left:15upx;
+	font-size: 28upx;
+}
+/* 加入规则 */
+.addfn {
+	background-color: #FFFFFF;
+	width: 100%;
+	margin: 20upx auto;
+	
+}
+
+.addfn>p {
+	
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 24.3upx;
+}
+
+.addfn .addfncol {
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 15upx;
+}
+
+.addfn .addfncol .addfncolitem {
+	margin: 0 auto;
+	width: 100%;
+	border-radius:15upx;
+	background-color: #FFFFFF;
+}
+.addfn .addfncol .addfncolitem .cllapsetext{
+	position: absolute;
+	color: #999999;
+	font-size: 16upx;
+}
+.addfn .addfntext {
+	-webkit-box-flex: 0.3;
+	-webkit-flex: 0.3;
+	flex: 0.3
+}
+
+
+/* 互助优势 */
+.addhave {
+	background-color: #FFFFFF;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 20upx;
+}
+
+.addhave>.addhaveimg {
+	margin-top: 19.5upx;
+	width: 100%;
+}
+.addhave>.addhaveimg>image{
+	width: 100%;
+	
+}
+.addhave>.addhaveimg>image:last-child{
+	margin-top:20upx ;
+	height: 600upx;
+}
+.addhave>.addtitletext{
+	margin-bottom: 110upx;
+}
+/* 常见问题 */
+.addque {
+	background-color: #FFFFFF;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 24.3upx;
+}
+
+.addque>p {
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 24.3upx;
+}
+
+.addque .addfncol {
+	margin: 0 auto;
+	margin-bottom: 54.3upx;
+}
+
+.addque .addfncol .addfncolitem {
+	margin: 0 auto;
+	width: 100%
+}
+/* 查看更多 */
+.more{
+	text-align: center;
+	background-color: #FFFFFF;
+	padding: 20upx 0;
+}
+.more view{
+	font-size: 26upx;
+}
+.more image{
+	margin-top: 5upx;
+	width: 25rpx;
+	height: 20rpx;
+}
+.more .rotate180{
+	transform: rotate(180deg);
+}
+.download{
+	position: fixed;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0,0,0,.5);
+	z-index:999999
+}
+.indexDownBox{
+	position: fixed;
+	bottom: 200upx;
+	right: 0upx;
+}
+.indexDownBox image,.indexDownBox{
+	width: 150upx;
+	height: 94upx;
+}

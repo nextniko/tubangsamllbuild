@@ -1,0 +1,17 @@
+.login ._li.data-v-1861ef34,.VerificationCode.data-v-1861ef34,.loginbtn.data-v-1861ef34,.Agreement.data-v-1861ef34,.Agreementclose.data-v-1861ef34{display: -webkit-box;display: -webkit-flex;display: flex;-ms-flex-pack: distribute;}
+.login.data-v-1861ef34,.smallTop.data-v-1861ef34{margin-top: 40rpx;}
+.login ._li.data-v-1861ef34{border-bottom: 1rpx solid #ccc;background: #fff;padding: 0 50rpx;height: 116rpx;-webkit-box-align: center;-webkit-align-items: center;align-items: center;font-size: 26rpx;}
+.login ._li.data-v-1861ef34:last-child{border: 0;}
+.loginicon.data-v-1861ef34{margin-right: 30rpx;width: 36rpx;height: 50rpx;}
+.loginicon image.data-v-1861ef34{width: 100%;display: inline;}
+.VerificationCode.data-v-1861ef34{width: 220rpx;height: 60rpx;border: 1rpx solid #ccc;-webkit-box-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;border-radius: 12rpx;}
+.VerificationCodeto.data-v-1861ef34{width: 220rpx;height: 60rpx;line-height: 60rpx;text-align: center; border: 1rpx solid #ccc;-webkit-box-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;border-radius: 12rpx;background:#999999;color:#FFFFFF;}
+.logininput.data-v-1861ef34{-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;}
+.logininput.data-v-1861ef34:focus{outline: none !important;border:0!important;}
+.loginbtn.data-v-1861ef34{width: 80%;margin-left: 10%;height: 80rpx;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;border: 0;background: #ccc;color: #fff;font-size: 32rpx;border-radius: 12rpx;}
+.loginbtnque.data-v-1861ef34{width: 80%;margin-left: 10%;height: 80rpx;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;border: 0;background: #2d8afe;color: #fff;font-size: 32rpx;border-radius: 12rpx;}
+.checkboxinp.data-v-1861ef34{-webkit-transform:scale(0.7);transform:scale(0.7);position: relative;top: 2rpx;}
+.Agreement.data-v-1861ef34{font-size: 22rpx;color: #666;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;margin: 50rpx 0 20rpx;}
+.Agreement .colorBule.data-v-1861ef34{color: #2d8afe;}
+.Agreementclose.data-v-1861ef34{position: absolute;right: 30rpx;background: #000;color: #fff;border-radius: 50%;height: 45rpx;width: 45rpx;-webkit-box-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;font-size: 30rpx;top: 20rpx;}
+

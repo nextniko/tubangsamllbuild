@@ -1,0 +1,110 @@
+.displayflex,.talk-li {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -weblit-flex;
+	display: flex;
+	align-items: center;
+}
+.talk-box {
+	justify-content: space-around;
+	/* padding: 8.26upx 0; */
+	background-color: #fff;
+	border-bottom: 1upx solid #e5e5e5;
+	position: fixed;
+    width: 93.7%;
+	height: 150upx;
+	margin-left: 24upx;
+    z-index: 9;
+	top: 0;
+	left: 0;
+	-webkit-box-shadow: 0 0 5px #2F89FF;
+	box-shadow: 0 0 5px #2F89FF;
+	border-radius:0px 0px 20px 20px;
+}
+
+.talk-box .txt-yellow {
+	font-size:34upx;
+	color:rgba(45,138,254,1);
+	margin-bottom:10upx;
+	font-family: Helvetica;
+}
+
+.talk-event {
+	border-bottom: 2upx solid #e5e5e5;
+}
+.talk-event view{
+	position: relative;
+}
+
+.zhedie{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -weblit-flex;
+	display: flex;
+	position: relative;
+	
+	
+}
+
+/* 互助公示 */
+.talklist{
+	padding: 0 24upx 17upx;
+	font-weight: bold;
+	font-size:30upx;
+	color: rgb(102, 102, 102);
+	margin-top: 200upx;
+}
+.zhedie ul{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+/* 列表样式 */
+.talk-li {
+	padding: 20upx 30upx;
+	background-color: #fff;
+	border-top: 1upx solid #e5e5e5;
+}
+
+.talk-limg {
+	position: relative;
+}
+
+.talk-head-img {
+	display: inline-block;
+	height: 120upx;
+	width: 120upx;
+	border-radius: 50%;
+	border: 1upx solid #ccc;
+}
+.talk-text {
+	flex: 1;
+	padding: 0 20upx;
+	font-size: 26upx;
+	line-height: 28upx;
+	color: #666;
+}
+.talk-tel{display: flex;justify-content: space-between;}
+.talk-arrow {
+	width: 17upx;
+	height: 17upx;
+	position: relative;
+}
+
+.talk-arrow:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 25%;
+	width: 100%;
+	height: 100%;
+	border-top: 1upx solid #5A5A5A;
+	border-left: 1upx solid #5A5A5A;
+	transform: rotate(135deg);
+}
+.talk-text .txt-yellow{color: #2d8afe;margin-left: 20upx;}
+.txt-color58 {
+	color: #585858;
+}
+.talk-price{margin:16upx 0;}

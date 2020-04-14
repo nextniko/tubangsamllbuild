@@ -1,0 +1,122 @@
+{
+	"pages":[ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/myinfo/index",
+			"style": {
+				"navigationBarTitleText": "我的" 
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "途邦互助"
+			}
+		},
+		{
+			"path": "pages/talk/index",
+			"style": {
+				"navigationBarTitleText": "互助公示",
+				"enablePullDownRefresh": true
+			}
+		},
+		
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录/注册" 
+			}
+		},
+		{
+			"path": "pages/addcar/index",
+			"style": {
+				"navigationBarTitleText": "添加车辆" 
+			}
+		},
+		{
+			"path": "pages/talk/talkDetail/index",
+			"style": {
+				"navigationBarTitleText": "事件详情" 
+			}
+		},
+		{
+			"path": "pages/test/index",
+			"style": {
+				"navigationBarTitleText": "测试页" 
+			}
+		},
+		{
+			"path": "pages/index/download/download",
+			"style": {
+				"navigationBarTitleText": "下载APP"
+			}
+		},
+		{
+			"path": "pages/wxpay/index",
+			"style": {
+				"navigationBarTitleText": "支付"
+			}
+		},
+		{
+			"path": "pages/wxpay/upload/index",
+			"style": {
+				"navigationBarTitleText": "上传车辆照片"
+			}
+		},
+		{
+			"path": "pages/carinfo/index",
+			"style": {
+				"navigationBarTitleText": "绑定车辆"
+			}
+		},
+		{
+			"path": "pages/login/user/index",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+		{
+			"path": "pages/login/privacy/index",
+			"style": {
+				"navigationBarTitleText": "隐私协议"
+			}
+		},
+		{
+			"path": "pages/myinfo/twocode/index",
+			"style": {
+				"navigationBarTitleText": "我的邀请码"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "途邦互助",
+		"navigationBarBackgroundColor": "#2D8AFE", 
+		"backgroundColor": "#fff" 
+	},
+	"tabBar": {
+	    "color": "#000000",
+	    "selectedColor": "#2d8afe",
+	    "borderStyle": "white",
+	    "backgroundColor": "#ffffff",
+	    "list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/image/tabbarindex.png",
+				"selectedIconPath": "static/image/tabbarindexsel.png",
+				"text": "首页"
+			}, 
+			{
+				"pagePath": "pages/talk/index",
+				"iconPath": "static/image/tabbartalk.png",
+				"selectedIconPath": "static/image/tabbartalksel.png",
+				"text": "互助公示"
+			},
+			{
+				"pagePath": "pages/myinfo/index",
+				"iconPath": "static/image/tabbarmyinfo.png",
+				"selectedIconPath": "static/image/tabbarmyinfosel.png",
+				"text": "我的"
+			}
+		]
+	}
+}

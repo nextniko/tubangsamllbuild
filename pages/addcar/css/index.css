@@ -1,0 +1,42 @@
+.BindVehicle li,.loginbtn,.CIregion,.CIchoosebox,.CIwindNbox li,.Vehicletitle,.BindVehicleCity,.Agreement,.Agreementclose{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-pack: distribute;}
+.BindVehicle li{border-bottom: 1upx solid #ccc;color: #4C4C4C;background: #fff;padding: 0 23upx;height: 116upx;align-items: center;font-size: 26upx;justify-content: space-between;}
+.BindVehicle li:last-child{border: 0;}
+.BindVehiclearrow{display: inline-block;width: 20upx;height: 20upx;position: relative;}
+.BindVehiclearrow:before{content: "";position: absolute;top: 0;right: 25%;width: 100%;height: 100%;border-top: 1upx solid #666;border-left: 1upx solid #666;-webkit-transform: rotate(135deg);transform: rotate(135deg);}
+.BindVehicleTips{font-size: 22upx;color: #666;padding: 40upx 50upx;}
+.Agreement{font-size: 22upx;align-items: center;justify-content: center;margin-bottom: 34upx;}
+.BindVehicleBox{position: fixed;width: 100%;left: 0;bottom: 40upx;text-align: center;font-size: 12upx;color: #666;}
+.checkboxinp{transform:scale(0.7);position: relative;top: 2upx;}
+.loginbtn{width: 465upx;margin:0 auto%;height: 90upx;justify-content: center;align-items: center;border: 0;background: #ccc;color: #fff;font-size: 32upx;border-radius: 45upx;}
+.loginbtnselect{width: 465upx;margin:0 auto%;height: 90upx;line-height:100upx;justify-content: center;align-items: center;border: 0;background:#2d8afe;color: #fff;font-size: 32upx;border-radius: 45upx;}
+.CIregion{width: 120upx;height: 55rpx;margin-left: 60upx;position: relative;border: 1upx solid #ccc;border-radius: 6upx;align-items: center;padding-left: 20upx;color: #666;vertical-align: middle;}
+.CIregion:after{content: "";position: absolute;right:15upx;top: 20rpx;border-bottom: none;border-top: 12upx solid #666;border-left: 9upx solid transparent;border-right: 9upx solid transparent;}
+.BindVehicleNumber{width: 200upx;margin-left: 20upx;vertical-align: middle;}
+.BindVehicleNumber:focus{border: 0!important;outline: none!important;}
+.CIchoosebox{align-items: center;}
+.CIwindow,.VehicleNumberBox,.AgreementBox{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgb(0,0,0,.5);z-index: 9;color: #666;}
+.CIwindbox,.Vehiclebox{background: #fff;font-size: 36upx;width: 100%;position: absolute;left: 0;bottom: 0;}
+.CIwindbox .title text {height: 80upx;line-height: 80upx;padding: 0 20upx;margin-left: 20upx;position: relative;}
+.CIwindbox .active,.Agreement .colorBule{color: #2d8afe;}
+.CIwindbox .active:before {content: "";border-bottom: 8upx solid #2d8afe;position: absolute;bottom: -18upx;width: 100%;left: 0;}
+.CIwindbox .title i {position: absolute;right: 0upx;top: 0upx;padding: 22upx 30upx;}
+.CItxtchoose,.Vehiclebox{border-top: 2upx solid #999;height: 500upx;overflow: auto;}
+.CItxtchoose li {width: 108upx;height: 80upx;line-height: 80upx;float: left;text-align: center;}
+.CIwindNbox {position: absolute;bottom: 0;left: 0;width: 100%;height: 424upx;background: #e2e7ed;border-top: 2upx solid #b7b7b7;}
+.CIwindNbox li{justify-content: center;}
+/* 车牌号弹窗 */
+.BindVehicleCity{align-items: center;}
+.BindVehicleCity .BindVehiclearrow{margin-left: 20upx;}
+.Vehicleprovince{margin-top: 100upx;}
+.Vehicleprovince li{padding:0 20upx;font-size: 28upx;border-bottom: 2upx solid #e2e2e2;height: 92upx;line-height: 92upx;}
+.Vehicletitle{height: 100upx;align-items: center;justify-content: space-between;border-bottom: 2upx solid #e2e2e2;position: fixed;width: 94%;background: #fff;z-index: 9;padding: 0 3%;}
+.Vehicleleftarrow,.Vehicleleftarrow i{width: 24upx;height: 24upx;}
+.Vehicleleftarrow i{display: inline-block;background: url(http://tb.jytat.net/hfive/img/back.png) no-repeat center;background-size: contain;}
+.AgreementBoxinfo{width: 80%;margin: 5%;height: 86%;background: #fff;padding: 5%;overflow-y: auto;position: relative;}
+.AgreementBoxinfo p{line-height: 1.6;color: #555;}
+.AgreementBoxinfo .title{text-align: center;font-size: 36upx;margin-bottom: 15upx;color: #333;font-weight: bold;}
+.AgreementBoxinfo .space{text-indent: 2em;}
+.AgreementBoxinfo .small_title{color: #333;font-weight: bold;}
+.AgreementBoxinfo .title{position: fixed;width: 90%;text-align: center;left: 5%;background: #fff;top: 3.2%;height: 90upx;line-height: 90upx;}
+.top90{margin-top: 90upx;}
+.Agreementclose{position: absolute;right: 30upx;background: #000;color: #fff;border-radius: 50%;height: 45upx;width: 45upx;align-items: center;justify-content: center;font-size: 30upx;top: 20upx;}

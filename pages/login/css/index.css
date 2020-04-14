@@ -1,0 +1,16 @@
+.login li,.VerificationCode,.loginbtn,.Agreement,.Agreementclose{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-pack: distribute;}
+.login,.smallTop{margin-top: 40upx;}
+.login li{border-bottom: 1upx solid #ccc;background: #fff;padding: 0 50upx;height: 116upx;align-items: center;font-size: 26upx;}
+.login li:last-child{border: 0;}
+.loginicon{margin-right: 30upx;width: 36upx;height: 50upx;}
+.loginicon image{width: 100%;display: inline;}
+.VerificationCode{width: 220upx;height: 60upx;border: 1upx solid #ccc;align-items: center;justify-content: center;border-radius: 12upx;}
+.VerificationCodeto{width: 220upx;height: 60upx;line-height: 60upx;text-align: center; border: 1upx solid #ccc;align-items: center;justify-content: center;border-radius: 12upx;background:#999999;color:#FFFFFF;}
+.logininput{flex: 1;}
+.logininput:focus{outline: none !important;border:0!important;}
+.loginbtn{width: 80%;margin-left: 10%;height: 80upx;justify-content: center;align-items: center;border: 0;background: #ccc;color: #fff;font-size: 32upx;border-radius: 12upx;}
+.loginbtnque{width: 80%;margin-left: 10%;height: 80upx;justify-content: center;align-items: center;border: 0;background: #2d8afe;color: #fff;font-size: 32upx;border-radius: 12upx;}
+.checkboxinp{transform:scale(0.7);position: relative;top: 2upx;}
+.Agreement{font-size: 22upx;color: #666;justify-content: center;align-items: center;margin: 50upx 0 20upx;}
+.Agreement .colorBule{color: #2d8afe;}
+.Agreementclose{position: absolute;right: 30upx;background: #000;color: #fff;border-radius: 50%;height: 45upx;width: 45upx;align-items: center;justify-content: center;font-size: 30upx;top: 20upx;}

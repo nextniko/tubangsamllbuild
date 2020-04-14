@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/myinfo/index",
+    "pages/index/index",
+    "pages/talk/index",
+    "pages/login/index",
+    "pages/addcar/index",
+    "pages/talk/talkDetail/index",
+    "pages/test/index",
+    "pages/index/download/download",
+    "pages/wxpay/index",
+    "pages/wxpay/upload/index",
+    "pages/carinfo/index",
+    "pages/login/user/index",
+    "pages/login/privacy/index",
+    "pages/myinfo/twocode/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "途邦互助",
+    "navigationBarBackgroundColor": "#2D8AFE",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#2d8afe",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/tabbarindex.png",
+        "selectedIconPath": "static/image/tabbarindexsel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/talk/index",
+        "iconPath": "static/image/tabbartalk.png",
+        "selectedIconPath": "static/image/tabbartalksel.png",
+        "text": "互助公示"
+      },
+      {
+        "pagePath": "pages/myinfo/index",
+        "iconPath": "static/image/tabbarmyinfo.png",
+        "selectedIconPath": "static/image/tabbarmyinfosel.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

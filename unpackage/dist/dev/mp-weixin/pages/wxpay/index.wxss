@@ -1,0 +1,28 @@
+.fontposition{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	margin-top:30rpx;
+	height:100rpx;
+	line-height:100rpx;
+	padding: 0 20rpx;
+	background-color: #FFFFFF;
+}
+.fontposition .font-right{
+	text-align: right;
+	color:#2F89FF;
+}
+.wxpayclick{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	background-color: #2F89FF;
+	color: #FFFFFF;
+}
+

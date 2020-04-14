@@ -1,0 +1,80 @@
+page {background: #f6f6f6;}
+.talkdetail{padding: 0 30rpx;margin-bottom: 100rpx;}
+.displayflex,.car-info .right ._p,.txt-ul ._li,.van-swipe-item{display: -webkit-box;display: -weblit-flex;display: -webkit-flex;display: flex;-webkit-box-align: center;-webkit-align-items: center;align-items: center;}
+.txt-yellow{color: #2d8afe;}
+.clear:after{content:" "; display:block; height:0; clear:both; visibility:hidden;}
+.clear{zoom:1;}
+/* 车辆信息 */
+.car-info{box-shadow: 3rpx 3rpx 6rpx #aaa;margin-top: 20rpx;background: #fff;border-radius: 6rpx;padding: 30rpx 20rpx;display: -webkit-box;display: -weblit-flex;display: -webkit-flex;display: flex;}
+.car-info .left{position: relative;height: 108rpx;}
+.car-info .left>image{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius:50% ;
+}
+.talk-head-image{height: 100rpx;width: 100rpx;border-radius: 50%;border: 1rpx solid #ccc;}
+.car-info .right{-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;padding-left: 20rpx;font-size: 28rpx;}
+.car-info .right ._p{margin-top: 10rpx;color: #5a5b66;}
+.car-info .name{font-size: 32rpx;color: #000;margin-bottom: 4rpx;}
+.car-info .right .txt-yellow {margin-left: 20rpx;}
+.icon{display: block;margin-right: 10rpx;width: 30rpx;height: 30rpx;background: url(http://tb.jytat.net/hfive/img/statistics_sprite_2.png?2) 0 0/auto 30rpx no-repeat;}
+.car-info .right .ic1{background-position: -30rpx 4rpx;}
+.car-info .right .ic2{background-position: -60rpx 4rpx;}
+.car-info .right .ic3{background-position: -150rpx 4rpx;}
+/* 详情事故 */
+.de-title{color: #2d8afe;font-size: 40rpx;margin: 40rpx 0 26rpx;}
+.ic-location{background-position: 0rpx 4rpx;}
+.time-p{font-size: 24rpx;}
+.car-item{margin-top: 10rpx;padding-left: 20rpx;position: relative;font-size: 28rpx;}
+.time-line {position: absolute;top: 0;left: 14rpx;margin-left: -1rpx;width: 2rpx;height: 100%;background-color: #ddd;}
+.time-line:before {content: "";position: absolute;top: 0;left: -0.1493rem;width: 14rpx;height: 14rpx;margin-left: 1rpx;background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphNGZhZjUyOS1jNmE3LWE5NDMtOGVjMS0wNWZhMTRjOGE1NTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MENBQ0VGMkI0REQxMTFFODhFOEFDQTA5NkI0RTY1N0QiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MENBQ0VGMkE0REQxMTFFODhFOEFDQTA5NkI0RTY1N0QiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBlZTY2OTY4LTc2NTAtOTE0OC04NjM5LTI0MWVmNWY1MDg2ZSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDphNGZhZjUyOS1jNmE3LWE5NDMtOGVjMS0wNWZhMTRjOGE1NTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5zQ792AAABEElEQVR42oySu06EQBSGmYEACQ0Vj7KJu4nWmuhG40t6KbTdWKwFmuyj0AAFCSQCfswfJ0Qb/4KcyzfMuYxp2zZwmqap67q+7zFwwzBMkiTLMmutACMUommaxTcm+NE8z3zzPE/TFMN6Dsg6hU6yCZICWFCuEyc0WkmoaLCI+nSvS9iHp5fy80Rkd7a5v7shCEQlYNEwDDrKpY/Pr4e3owrFiOP4dn8FR5Ya7DiO+isqP07BSsf3UnHNxwb/1tKv5oJ22806d3G+VVxjjpgzJeNTCX1g+Lb215cERYOZuq6rqvLD4rSK02G1j4qiWObMPuST+FrJcwBW+2Vvoicn/ySE+sWav8/FP4Nfz+VbgAEACJjXTDCTZ+0AAAAASUVORK5CYII=) center/100% 100% no-repeat;}
+.item-cont{background: #fff;border-radius: 6rpx; overflow: hidden;padding: 30rpx;line-height: 1.2;}
+.txt-describe{margin-top: 10rpx;}
+.image-ul{margin-left: -30rpx;}
+.image-ul ._li{width: 176.25rpx;height: 176.25rpx;background: #ccc;float: left;border-radius: 7rpx;margin: 30rpx 0 0 30rpx;overflow: hidden;}
+.image-ul ._li view{width: 100%;height:0;padding-bottom: 100%;overflow: hidden;position: relative;}
+.image-ul ._li image{position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;}
+/* 详情定损 */
+.head{margin-bottom: 46rpx;}
+.head image{width: 60rpx;height: 60rpx;border-radius: 50%;margin-right: 20rpx;}
+.head .icon-V{width: 30rpx;height: 30rpx;margin-left: 5rpx;}
+.font16{font-size: 32rpx;color: #3e486d;}
+.txt-ul ._li{margin-top: 28rpx;-webkit-box-align: normal;-webkit-align-items: normal;align-items: normal;color: #5a5b66;}
+.point{display: inline-block;width: 16rpx;height: 16rpx;margin-right: 20rpx;background: #898b9f;background: -webkit-linear-gradient(315deg,#b1b4d0,#5a5b66);background: linear-gradient(135deg,#b1b4d0,#5a5b66);border-radius: 2rpx;margin-top: 8rpx;}
+.situation{min-width: 112rpx;}
+.txt-detail{-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;margin-left: 24rpx;}
+.p1{background: #2d8afe;}
+.p2{background: #ffcc5b;background: -webkit-linear-gradient(315deg,#ffe285,#2d8afe);background: linear-gradient(135deg,#ffe285,#2d8afe);}
+.p3{background: #7feeb4;background: -webkit-linear-gradient(315deg,#9bf5c5,#57e399);background: linear-gradient(135deg,#9bf5c5,#57e399);}
+/* 图片放大 */
+.windbg{position: fixed;top:0;left: 0;width: 100%;height: 100%;background: rgb(0,0,0,0.5);z-index: 99;}
+.my-swipe{height:100%;}
+.van-swipe__indicator{width: 20rpx;height: 20rpx;}
+/* 车主评价 */
+.star-box .star{display: block;width: 30rpx;height: 30rpx;margin-right: 6rpx;background: url(http://tb.jytat.net/hfive/image/sprite_star_1.png) 0 -90rpx/30rpx auto no-repeat;}
+.star-box ._p:last-child{margin-left: 20rpx;}
+.evaluate-txt{line-height: 1.8;}
+.evaluate ._span{display: inline-block;line-height: 1.5;padding:6rpx 8rpx;margin: 20rpx 20rpx 0 0;background: #f36c12;color: #fff;}
+.uni-margin-wrap {
+	height:100%;
+ 	margin:0 0rpx;
+}
+.card-swiper{
+	height: 75%;
+	width: 100%;
+	margin-top: 300rpx;
+}
+.swiper-item {
+ 	display: block;
+    line-height: 300rpx;
+ 	text-align: center;
+}
+.swiper-item image{
+	width: 100% !important;
+}
+/*图片宽度设置100% ，高度300upx（设为auto图片无法显示）*/
+.swiper-image{  
+     width:100%;  
+     height:100%;
+} 
+

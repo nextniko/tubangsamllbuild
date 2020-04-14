@@ -1,0 +1,8 @@
+.AgreementBox{position: relative;background: #fff;z-index: 9;color: #666;}
+.Agreement .colorBule{color: #2d8afe;}
+.AgreementBoxinfo{width: 90%;height: 86%;background: #fff;padding: 5%;overflow-y: auto;position: relative;}
+.AgreementBoxinfo p{line-height: 1.6;color: #999999;}
+.AgreementBoxinfo .title{text-align: center;font-size: 36upx;margin-bottom: 15upx;color: #333;font-weight: bold;}
+.AgreementBoxinfo .space{text-indent: 2em;}
+.AgreementBoxinfo .small_title{color: #333;font-weight: bold;}
+.AgreementBox .title{position: fixed;width: 90%;text-align: center;left: 5%;background: #fff;top: 3.2%;height: 90upx;line-height: 90upx;}

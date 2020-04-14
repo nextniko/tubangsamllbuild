@@ -1,0 +1,11 @@
+/* 公共样式 */
+.LicensePlate{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-pack: distribute;}
+.guaranteebox{border-radius: 12upx;overflow: hidden;background-color: #fff;box-shadow: 0 0 20upx #999;margin: 20upx 30upx;padding: 30upx;}
+.LicensePlate{justify-content: space-between;align-items: center;font-size: 30upx;padding-bottom: 30upx;}
+.GuaranteeCity{margin-top: 20upx;line-height: 32upx;font-size: 28upx;color: #3e486d;}
+.GcolorBlue{color: #2D8AFE;}
+.Gcoloryellow{color: #fe4a31;}
+.GbtnBox{height: 70upx;background: #2D8AFE;border-radius: 100upx;line-height: 70upx;color: #fff;float: right;margin-top: 50upx;font-size: 28upx;}
+.paybutton{
+	margin-left: 30upx;
+}
