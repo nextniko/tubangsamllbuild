@@ -56,45 +56,51 @@
 				],
 			}
 		},
+		onShow(){
+			console.log('上传图片')
+		},
 		methods:{
 			chooseImage(index) {
 				let that = this
+				uni.showLoading({
+					title:"加载中"
+				})
 				uni.chooseImage({
 					count: 6, //默认9
 					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 					sourceType: ['camera'], //从相册选择
 					success:  res => {
-						// that.image[index].url = res.tempFilePaths[0];
-						// that.image[index].name = res.tempFilePaths[0];
-						this.urlTobase64(res.tempFilePaths[0],index)
+						that.image[index].url = res.tempFilePaths[0];
+						uni.getFileSystemManager().readFile({
+							filePath: res.tempFilePaths[0], //选择图片返回的相对路径
+							encoding: 'base64', //编码格式
+							success: res => { //成功的回调
+								let base64 = 'data:image/jpeg;base64,' + res.data //不加上这串字符，在页面无法显示的哦
+								let bas64up = res.data
+								that.image[index].name = bas64up;
+								console.log(that.image[index].name)
+								uni.hideLoading();
+							}
+						});
+						
 					}
 				});
 			},
 			// 转换base64
 			urlTobase64(url,index) {
 				let that = this
-				uni.request({
-					url: url,
-					method: 'GET',
-					responseType: 'arraybuffer',
-					success: res => {
-						let base64 = wx.arrayBufferToBase64(res.data); //把arraybuffer转成base64
-						base64 = 'data:image/jpeg;base64,' + base64; //不加上这串字符，在页面无法显示
-						let bas64up = wx.arrayBufferToBase64(res.data);
-						that.image[index].url = base64;
-						that.image[index].name = bas64up;
-					}
-				});
+				
 			},
 			// 提交照片
 			submit(){
-				if(this.image.every(item=>{return item.name===""})){
-					uni.showToast({
-						icon:"none",
-					    title: "请上传所需要的所有照片",
-					    duration: 2000
-					});
-				}else{
+				
+				// if(status){
+				// 	uni.showToast({
+				// 		icon:"none",
+				// 	    title: "请上传所需要的所有照片",
+				// 	    duration: 2000
+				// 	});
+				// }else{
 					let img= []
 					this.image.map(item=>{
 						img.push(item.name)
@@ -118,14 +124,21 @@
 								    duration: 2000
 								});
 								uni.setStorageSync('status',10)
-								uni.switchTab({
-									url:"/pages/index/index"
-								})
+								setTimeout(function(){
+									uni.switchTab({
+										url:"/pages/index/index"
+									})
+								},2000)
+							}else{
+								uni.showToast({
+									icon:"none",
+								    title: res.message,
+								    duration: 2000
+								});
 							}
-							
 						}
 					})
-				}
+				// }
 			}
 		}
 	}

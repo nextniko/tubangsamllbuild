@@ -109,76 +109,89 @@ var _default = { data: function data() {return { image: [{ name: "", url: 'http:
 
 
   },
+  onShow: function onShow() {
+    console.log('上传图片');
+  },
   methods: {
-    chooseImage: function chooseImage(index) {var _this = this;
+    chooseImage: function chooseImage(index) {
       var that = this;
+      uni.showLoading({
+        title: "加载中" });
+
       uni.chooseImage({
         count: 6, //默认9
         sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
         sourceType: ['camera'], //从相册选择
         success: function success(res) {
-          // that.image[index].url = res.tempFilePaths[0];
-          // that.image[index].name = res.tempFilePaths[0];
-          _this.urlTobase64(res.tempFilePaths[0], index);
+          that.image[index].url = res.tempFilePaths[0];
+          uni.getFileSystemManager().readFile({
+            filePath: res.tempFilePaths[0], //选择图片返回的相对路径
+            encoding: 'base64', //编码格式
+            success: function success(res) {//成功的回调
+              var base64 = 'data:image/jpeg;base64,' + res.data; //不加上这串字符，在页面无法显示的哦
+              var bas64up = res.data;
+              that.image[index].name = bas64up;
+              console.log(that.image[index].name);
+              uni.hideLoading();
+            } });
+
+
         } });
 
     },
     // 转换base64
     urlTobase64: function urlTobase64(url, index) {
       var that = this;
-      uni.request({
-        url: url,
-        method: 'GET',
-        responseType: 'arraybuffer',
-        success: function success(res) {
-          var base64 = wx.arrayBufferToBase64(res.data); //把arraybuffer转成base64
-          base64 = 'data:image/jpeg;base64,' + base64; //不加上这串字符，在页面无法显示
-          var bas64up = wx.arrayBufferToBase64(res.data);
-          that.image[index].url = base64;
-          that.image[index].name = bas64up;
-        } });
 
     },
     // 提交照片
     submit: function submit() {
-      if (this.image.every(function (item) {return item.name === "";})) {
-        uni.showToast({
-          icon: "none",
-          title: "请上传所需要的所有照片",
-          duration: 2000 });
 
-      } else {
-        var img = [];
-        this.image.map(function (item) {
-          img.push(item.name);
-        });
-        uni.showLoading({
-          title: '上传中' });
+      // if(status){
+      // 	uni.showToast({
+      // 		icon:"none",
+      // 	    title: "请上传所需要的所有照片",
+      // 	    duration: 2000
+      // 	});
+      // }else{
+      var img = [];
+      this.image.map(function (item) {
+        img.push(item.name);
+      });
+      uni.showLoading({
+        title: '上传中' });
 
-        (0, _api.uploadimg)({
-          //base:JSON.stringify(img),
-          base: JSON.stringify(img),
-          flag: "1",
-          id: uni.getStorageSync('id'),
-          token: uni.getStorageSync('token') }).
-        then(function (res) {
-          uni.hideLoading();
-          if (res.code === "200") {
-            if (res.data === "SUCCESS") {
-              uni.showToast({
-                icon: "none",
-                title: "上传成功",
-                duration: 2000 });
+      (0, _api.uploadimg)({
+        //base:JSON.stringify(img),
+        base: JSON.stringify(img),
+        flag: "1",
+        id: uni.getStorageSync('id'),
+        token: uni.getStorageSync('token') }).
+      then(function (res) {
+        uni.hideLoading();
+        if (res.code === "200") {
+          if (res.data === "SUCCESS") {
+            uni.showToast({
+              icon: "none",
+              title: "上传成功",
+              duration: 2000 });
 
-              uni.setStorageSync('status', 10);
+            uni.setStorageSync('status', 10);
+            setTimeout(function () {
               uni.switchTab({
                 url: "/pages/index/index" });
 
-            }
+            }, 2000);
+          } else {
+            uni.showToast({
+              icon: "none",
+              title: res.message,
+              duration: 2000 });
 
           }
-        });
-      }
+        }
+      });
+      // }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

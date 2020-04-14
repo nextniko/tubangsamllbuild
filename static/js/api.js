@@ -1,6 +1,6 @@
 
-// const url = "http://tb.jytat.net"
-const url = "http://192.168.0.22:8080"
+const url = "https://tbsmall.jiayibao.net"
+// const url = "http://192.168.0.22:8080"
 //登录前的微信验证
 
 export function getopenid(data){

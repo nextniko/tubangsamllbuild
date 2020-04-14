@@ -1673,7 +1673,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 155:
+/***/ 163:
 /*!*************************************************************************!*\
   !*** D:/njl/项目/jiayibao/mutual/tubangpre/components/uni-icons/icons.js ***!
   \*************************************************************************/
@@ -7887,8 +7887,8 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACR
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getopenid = getopenid;exports.getcode = getcode;exports.tubanglogin = tubanglogin;exports.servicecity = servicecity;exports.indexinfo = indexinfo;exports.publicityList = publicityList;exports.publicity = publicity;exports.publicitydetail = publicitydetail;exports.goUserDetail = goUserDetail;exports.carList = carList;exports.bindcar = bindcar;exports.addcar = addcar;exports.uploadimg = uploadimg;
-// const url = "http://tb.jytat.net"
-var url = "http://192.168.0.22:8080";
+var url = "https://tbsmall.jiayibao.net";
+// const url = "http://192.168.0.22:8080"
 //登录前的微信验证
 
 function getopenid(data) {
@@ -9111,7 +9111,7 @@ function padLeftZero(str) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/myinfo/index": { "navigationBarTitleText": "我的", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/index": { "navigationBarTitleText": "途邦互助", "usingComponents": { "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" }, "usingAutoImportComponents": { "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" } }, "pages/talk/index": { "navigationBarTitleText": "互助公示", "enablePullDownRefresh": true, "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" }, "usingAutoImportComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/login/index": { "navigationBarTitleText": "登录/注册", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/addcar/index": { "navigationBarTitleText": "添加车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/talk/talkDetail/index": { "navigationBarTitleText": "事件详情", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/index": { "navigationBarTitleText": "测试页", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/download/download": { "navigationBarTitleText": "下载APP", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/index": { "navigationBarTitleText": "支付", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/upload/index": { "navigationBarTitleText": "上传车辆照片", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/carinfo/index": { "navigationBarTitleText": "绑定车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/user/index": { "navigationBarTitleText": "用户协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/privacy/index": { "navigationBarTitleText": "隐私协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/myinfo/twocode/index": { "navigationBarTitleText": "我的邀请码" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "途邦互助", "navigationBarBackgroundColor": "#2D8AFE", "backgroundColor": "#fff" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/myinfo/index": { "navigationBarTitleText": "我的" }, "pages/index/index": { "navigationBarTitleText": "途邦互助" }, "pages/talk/index": { "navigationBarTitleText": "互助公示", "enablePullDownRefresh": true }, "pages/login/index": { "navigationBarTitleText": "登录/注册" }, "pages/addcar/index": { "navigationBarTitleText": "添加车辆" }, "pages/talk/talkDetail/index": { "navigationBarTitleText": "事件详情" }, "pages/test/index": { "navigationBarTitleText": "测试页" }, "pages/index/download/download": { "navigationBarTitleText": "下载APP" }, "pages/wxpay/index": { "navigationBarTitleText": "支付" }, "pages/wxpay/upload/index": { "navigationBarTitleText": "上传车辆照片" }, "pages/carinfo/index": { "navigationBarTitleText": "绑定车辆" }, "pages/login/user/index": { "navigationBarTitleText": "用户协议" }, "pages/login/privacy/index": { "navigationBarTitleText": "隐私协议" }, "pages/myinfo/twocode/index": { "navigationBarTitleText": "我的邀请码" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "途邦互助", "navigationBarBackgroundColor": "#2D8AFE", "backgroundColor": "#fff" } };exports.default = _default;
 
 /***/ }),
 
