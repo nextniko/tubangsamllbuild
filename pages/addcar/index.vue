@@ -124,10 +124,10 @@
 						}
 				],
 				Cityid:{
-					provinceid:"",
-					cityid:"",
-					carnumber:"",
-					id:""
+					provinceid:"",//省id
+					cityid:"",//市id
+					carnumber:"",//车牌号
+					id:""//车id
 				}
 			}
 		},
@@ -281,8 +281,8 @@
 						token:uni.getStorageSync('token'),
 						licensePlateNumber:this.text+this.Cityid.carnumber,
 						drvingCity:this.Cityid.cityid,
-						// mobileNumber:"18011596096"
 					}).then((res)=>{
+						uni.hideLoading()
 						if(res.code ==="200" && res.message === "SUCCESS"){
 							if(this.addstatus){
 								this.addstatus = false
@@ -294,9 +294,12 @@
 									duration: 2000
 								});
 								uni.hideLoading();
-								uni.navigateTo({
-									url:"/pages/wxpay/index"
-								})
+								setTimeout(()=>{
+									uni.navigateTo({
+										url:"/pages/wxpay/index"
+									})
+								},1500)
+								
 							}else{
 								this.addstatus = true
 							}

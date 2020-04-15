@@ -4,15 +4,15 @@
 			<!-- 账户公示 -->
 			<view class="talk-box displayflex">
 				<view>
-					<p class="txt-yellow">￥{{resdetail.detailheader.amtTotal}}</p>
+					<p class="txt-yellow">￥{{resdetail.detailheader.amtTotal?resdetail.detailheader.amtTotal:"0"}}</p>
 					<p class="txt-color58">互助金余额</p>
 				</view>
 				<view>
-					<p class="txt-yellow">￥{{resdetail.detailheader.amtPaid}}</p>
+					<p class="txt-yellow">￥{{resdetail.detailheader.amtPaid?resdetail.detailheader.amtPaid:"0"}}</p>
 					<p class="txt-color58">互助支出</p>
 				</view>
 				<view>
-					<p class="txt-yellow">{{resdetail.detailheader.finishCount}}件</p>
+					<p class="txt-yellow">{{resdetail.detailheader.finishCount?resdetail.detailheader.finishCount:"0"}}件</p>
 					<p class="txt-color58">已互助</p>
 				</view>
 			</view>
@@ -26,10 +26,10 @@
 				</view>
 				<view class="talk-text">
 				  <p class="talk-tel">
-					<text>{{item.nameCarOwner}}</text>
-					<text class="txt-yellow">· {{item.licensePlateNumber}}</text>
+					<text>{{item.nameCarOwner?item.nameCarOwner:"0"}}</text>
+					<text class="txt-yellow">· {{item.licensePlateNumber?item.licensePlateNumber:"0"}}</text>
 				  </p>
-				  <p class="talk-price">维修价格：<text class="txt-color58">{{item.amtAssert}}元</text></p>
+				  <p class="talk-price">维修价格：<text class="txt-color58">{{item.amtAssert?item.amtAssert:"0"}}元</text></p>
 				  <p class="talk-tel">
 					  <label>全员预计分摊：<text class="txt-color58">{{item.amtShare}}元</text></label>
 					  <text class="talk-arrow"></text>

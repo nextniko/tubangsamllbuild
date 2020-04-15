@@ -107,7 +107,6 @@
 			login:function(){ 
 				let that = this
 				if(this.checkbox){
-					console.log(that.user.fromid)
 					tubanglogin({
 						phoneAndCode:that.user.phone+"_"+that.user.code,
 						fromUserName:that.openid
@@ -115,12 +114,16 @@
 						if(res.code==="200"){
 							uni.setStorageSync('token', res.data.token);
 							if(res.data.carList.length>0){
-								uni.setStorageSync('id', res.data.carList[0].id);
-								uni.setStorageSync('userId', res.data.carList[0].userId);
-								uni.setStorageSync('customerPN', res.data.carList[0].customerPN);
+								uni.setStorageSync('id', Number(res.data.carList[0].id));
+								uni.setStorageSync('userId', Number(res.data.carList[0].userId));
+								uni.setStorageSync('customerPN', Number(res.data.carList[0].customerPN));
 								uni.setStorageSync('amtCompensation', Number(res.data.carList[0].amtCompensation));
 								uni.setStorageSync('status', Number(res.data.carList[0].status));
 							}else{
+								uni.setStorageSync('id', "");
+								uni.setStorageSync('userId', "");
+								uni.setStorageSync('customerPN', res.data.customerPN);
+								uni.setStorageSync('amtCompensation',"");
 								uni.setStorageSync('status', "");
 							}
 							uni.switchTab({
@@ -133,7 +136,6 @@
 							    duration: 2000
 							});
 						}
-						console.log(res) 
 					})
 				}else{
 					uni.showToast({

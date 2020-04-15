@@ -5,10 +5,8 @@ export const mch_id="1445103202"//商户号
 export const key="e3397ccc937698590f1d4a6a29f85557" //商户秘钥
 let openid=""
 let session_key=""
-let nonceStr=md5(Math.ceil(Math.random()*1000).toString()).toUpperCase()
 let body="mutual"//商品名必填,没有编码不能用中文
 let notify_url="http://tb.jytat.net"//通知地址必填
-let out_trade_no = '2020'+(Date.now().toString())//订单号
 let spbill_create_ip = "222.209.107.65"//终端ip
 let prepay_id=""//统一下单
 
@@ -20,6 +18,8 @@ function getXMLNodeValue(node_name, xml) {
 }
 // 获取openid
 export function getPrepay(data){
+	let nonceStr=md5(Math.ceil(Math.random()*1000).toString()).toUpperCase() //随机字符串
+	let out_trade_no = md5(Math.ceil(Math.random()*10000).toString()).toUpperCase()//订单号
 	return new Promise((resolve,reject)=>{
 		wx.login({
 			// login获取code

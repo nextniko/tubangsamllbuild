@@ -9,7 +9,6 @@
 </template>
 
 <script>
-	import md5old from 'js-md5'
 	import { md5 } from '@/static/js/md5.js' 
 	// 获取 统一下单的方法
 	import { getPrepay } from '@/static/js/login/wxlogin/index.js'
@@ -34,7 +33,7 @@
 				console.log(this.money)
 			}
 			getPrepay({
-				moneny:parseInt(this.money*100)
+				moneny:parseInt( this.money * 100)
 			}).then(res=>{
 				this.prepay_id = res
 			})
@@ -53,9 +52,11 @@
 						    title: "支付成功",
 						    duration: 2000
 						});
-						uni.redirectTo({
-							url:"pages/wxpay/upload/index"
-						})
+						setTimeout(()=>{
+							uni.redirectTo({
+							    url: '/pages/wxpay/upload/index'
+							});
+						},1000)
 					}else{
 						uni.showToast({
 							icon:"none",

@@ -66,7 +66,7 @@
 			return{
 				status:{
 					token:"",
-					code:false,
+					code:"",
 					addstatus:true
 				},
 				resdetail:{
@@ -77,7 +77,6 @@
 			}
 		},
 		onShow(){
-			
 			this.status.token = uni.getStorageSync('token');
 			this.api()
 		},
@@ -94,28 +93,18 @@
 					if(res.code ==="200"){
 						this.resdetail.myinfo = res.data
 					}else{
-						// uni.navigateTo({
-						// 	url:"/pages/login/index"
-						// })
+						uni.removeStorageSync('token')
+						uni.removeStorageSync('userId');
+						uni.removeStorageSync('id');
+						uni.removeStorageSync('customerPN');
+						uni.removeStorageSync('status');
+						uni.removeStorageSync('openid');
+						this.status.token = ""
+						this.status.code = ""
 					}
-					
-				})
-				carList({
-					token:this.status.token
-				}).then((res)=>{
-					this.status.code = res.code 
-					if(res.code ==="200"){
-						this.resdetail.carList = res.data
-					}else{
-						// uni.navigateTo({
-						// 	url:"/pages/login/index"
-						// })
-					}
-					
 				})
 			},
 			gologin(){
-				
 				uni.navigateTo({
 					url:"/pages/login/index"
 				})

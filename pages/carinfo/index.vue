@@ -18,7 +18,7 @@
 </template>
 
 <script>
-	import { carList } from '@/static/js/api.js'
+	import { carList,goUserDetail } from '@/static/js/api.js'
 	export default {
 		data(){
 			return{
@@ -41,14 +41,47 @@
 				uni.showLoading({
 				    title: '加载中'
 				});
-				carList({
-					token:uni.getStorageSync('token'),
-					status:uni.getStorageSync('status'),
-					pageNo:"1"
+				goUserDetail({
+					token:uni.getStorageSync("token")
 				}).then((res)=>{
-					this.resdetail = res.data
-					uni.setStorageSync('amtCompensation',res.data.list[0].amtCompensation)
-					uni.hideLoading();
+					if(res.code ==="200"){
+						if(res.data.carList.length>0){
+							uni.setStorageSync('id', Number(res.data.carList[0].id));
+							uni.setStorageSync('userId', Number(res.data.carList[0].userId));
+							uni.setStorageSync('customerPN', Number(res.data.carList[0].customerPN));
+							uni.setStorageSync('amtCompensation', Number(res.data.carList[0].amtCompensation));
+							uni.setStorageSync('status', Number(res.data.carList[0].status));
+						}else{
+							uni.setStorageSync('id', "");
+							uni.setStorageSync('userId', "");
+							uni.setStorageSync('customerPN', res.data.customerPN);
+							uni.setStorageSync('amtCompensation',"");
+							uni.setStorageSync('status', "");
+						}
+						carList({
+							token:uni.getStorageSync('token'),
+							status:uni.getStorageSync('status'),
+							pageNo:"1"
+						}).then((res)=>{
+							uni.hideLoading();
+							this.resdetail = res.data
+						
+						})
+					}else{
+						uni.showModal({
+							title: '提示',
+						    title: "尚未登录，请登录",
+						    success: function (res) {
+								if (res.confirm) {
+									uni.navigateTo({
+										url:"/pages/login/index"
+									})
+								} else if (res.cancel) {
+									
+								}
+							}
+						});
+					}
 				})
 			},
 			getstatus(){
@@ -95,15 +128,19 @@
 				let urlnavi = ""
 				switch(url){
 					case "pay":
+					// 支付
 						urlnavi = "/pages/wxpay/index"
 						break;
 					case 1:
+					// 修改车辆
 						urlnavi = "/pages/addcar/index?mode=update"
 						break
 					case 2:
+					// 上传图片
 						urlnavi = "/pages/wxpay/upload/index"
 						break
 					case 12:
+					// 未通过审核上传图片
 						urlnavi = "/pages/wxpay/upload/index"
 						break
 					default:

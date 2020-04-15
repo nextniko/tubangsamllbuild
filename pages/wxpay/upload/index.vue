@@ -57,7 +57,7 @@
 			}
 		},
 		onShow(){
-			console.log('上传图片')
+			// console.log('上传图片')
 		},
 		methods:{
 			chooseImage(index) {
@@ -78,7 +78,6 @@
 								let base64 = 'data:image/jpeg;base64,' + res.data //不加上这串字符，在页面无法显示的哦
 								let bas64up = res.data
 								that.image[index].name = bas64up;
-								console.log(that.image[index].name)
 								uni.hideLoading();
 							}
 						});
@@ -89,18 +88,16 @@
 			// 转换base64
 			urlTobase64(url,index) {
 				let that = this
-				
 			},
 			// 提交照片
 			submit(){
-				
-				// if(status){
-				// 	uni.showToast({
-				// 		icon:"none",
-				// 	    title: "请上传所需要的所有照片",
-				// 	    duration: 2000
-				// 	});
-				// }else{
+				if(this.image.some(function(item){return item.name ===""})){
+					uni.showToast({
+						icon:"none",
+					    title: "请上传所需要的所有照片",
+					    duration: 2000
+					});
+				}else{
 					let img= []
 					this.image.map(item=>{
 						img.push(item.name)
@@ -109,7 +106,6 @@
 					    title: '上传中'
 					});
 					uploadimg({
-						//base:JSON.stringify(img),
 						base:JSON.stringify(img),
 						flag:"1",
 						id:uni.getStorageSync('id'),
@@ -138,7 +134,7 @@
 							}
 						}
 					})
-				// }
+				}
 			}
 		}
 	}

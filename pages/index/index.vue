@@ -122,7 +122,7 @@
 <script>
 	import uniCollapse from '@/components/uni-collapse/uni-collapse.vue';
 	import uniCollapseItem from '@/components/uni-collapse-item/uni-collapse-item.vue';  
-	import { indexinfo } from '@/static/js/api.js'
+	import { indexinfo,goUserDetail } from '@/static/js/api.js'
 	export default {
 	    components: {uniCollapse,uniCollapseItem}, 
 		data(){
@@ -157,34 +157,49 @@
 				})
 			},
 			gotoadd(){
-				if(this.indexstatus.addstatus){
-					this.indexstatus.addstatus = false
-					console.log(1)
-					if(uni.getStorageSync('token')||uni.getStorageSync('token')!==""){
-						let serverstatus = parseInt(uni.getStorageSync('status'))
-						if(serverstatus && serverstatus !=="" && serverstatus !== null){
-							// 跳转绑定车辆
+				uni.showLoading({
+				    title: '搜索车辆信息'
+				});
+				goUserDetail({
+					token:uni.getStorageSync("token")
+				}).then((res)=>{
+					uni.hideLoading();
+					if(res.code ==="200"){
+						if(res.data.carList.length>0){
+							uni.setStorageSync('id', Number(res.data.carList[0].id));
+							uni.setStorageSync('userId', Number(res.data.carList[0].userId));
+							uni.setStorageSync('customerPN', Number(res.data.carList[0].customerPN));
+							uni.setStorageSync('amtCompensation', Number(res.data.carList[0].amtCompensation));
+							uni.setStorageSync('status', Number(res.data.carList[0].status));
 							uni.navigateTo({
 								url:"/pages/carinfo/index"
 							})
 						}else{
-							// 跳转添加车辆
+							uni.setStorageSync('id', "");
+							uni.setStorageSync('userId', "");
+							uni.setStorageSync('customerPN', res.data.customerPN);
+							uni.setStorageSync('amtCompensation',"");
+							uni.setStorageSync('status', "");
 							uni.navigateTo({
 								url:"/pages/addcar/index"
 							})
 						}
 					}else{
-						// 登录
-						uni.navigateTo({
-							url:"/pages/login/index"
-						})
+						uni.showModal({
+							title: '提示',
+						    title: "尚未登录，请登录",
+						    success: function (res) {
+								if (res.confirm) {
+									uni.navigateTo({
+										url:"/pages/login/index"
+									})
+								} else if (res.cancel) {
+									
+								}
+							}
+						});
 					}
-					this.indexstatus.addstatus = true
-				}else{
-					return
-				}
-				
-				
+				})
 			},
 			clickmore(){
 				this.indexstatus.more = !this.indexstatus.more
