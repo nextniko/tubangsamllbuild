@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.uni-collapse-cell.data-v-23e0df48 {
+.uni-collapse-cell.data-v-a6bfafa2 {
   position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -35,16 +35,16 @@
   border-bottom-style: solid;
   font-size: 26rpx;
 }
-.uni-collapse-cell--hover.data-v-23e0df48 {
+.uni-collapse-cell--hover.data-v-a6bfafa2 {
   background-color: #f1f1f1;
 }
-.uni-collapse-cell--open.data-v-23e0df48 {
+.uni-collapse-cell--open.data-v-a6bfafa2 {
   background-color: #f1f1f1;
 }
-.uni-collapse-cell--disabled.data-v-23e0df48 {
+.uni-collapse-cell--disabled.data-v-a6bfafa2 {
   background-color: #f1f1f1;
 }
-.uni-collapse-cell__title.data-v-23e0df48 {
+.uni-collapse-cell__title.data-v-a6bfafa2 {
   padding: 50rpx 20rpx;
   position: relative;
   display: -webkit-box;
@@ -66,24 +66,24 @@
           align-items: center;
   background: #fff;
 }
-.uni-collapse-cell__title-img.data-v-23e0df48 {
+.uni-collapse-cell__title-img.data-v-a6bfafa2 {
   height: 52rpx;
   width: 52rpx;
   margin-right: 10px;
 }
-.uni-collapse-cell__title-arrow.data-v-23e0df48 {
+.uni-collapse-cell__title-arrow.data-v-a6bfafa2 {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
-.uni-collapse-cell__title-arrow-active.data-v-23e0df48 {
+.uni-collapse-cell__title-arrow-active.data-v-a6bfafa2 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
-.uni-collapse-cell__title-text.data-v-23e0df48 {
+.uni-collapse-cell__title-text.data-v-a6bfafa2 {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
@@ -94,10 +94,10 @@
   text-overflow: ellipsis;
   font-size: 26rpx;
 }
-.uni-collapse-cell__content.data-v-23e0df48 {
+.uni-collapse-cell__content.data-v-a6bfafa2 {
   overflow: hidden;
 }
-.uni-collapse-cell__wrapper.data-v-23e0df48 {
+.uni-collapse-cell__wrapper.data-v-a6bfafa2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -106,7 +106,7 @@
   -webkit-flex-direction: column;
           flex-direction: column;
 }
-.uni-collapse-cell__content--hide.data-v-23e0df48 {
+.uni-collapse-cell__content--hide.data-v-a6bfafa2 {
   height: 0rpx;
   line-height: 0rpx;
 }

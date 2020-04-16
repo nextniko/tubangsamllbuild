@@ -11,9 +11,9 @@
 					<p>{{resdetail.carCount}}</p>
 					<p>保障车辆</p>
 				</li>
-				<li>
-					<p>{{resdetail.eventCount}}</p> 
-					<p>互助</p>
+				<li @click="gohelp">
+					<p>{{resdetail.finishCount}}</p> 
+					<p>已互助</p>
 				</li>
 			</ul>
 		</view>
@@ -104,8 +104,8 @@
 					 <uni-collapse-item v-if="indexstatus.more" title="Q12 不予救助的常见情况有哪些？" showAnimation="true">
 					 	<view style="padding: 30rpx;line-height: 2;font-size: 24upx;"> 不予救助的范围包括：加入之前的旧伤和旧伤面产生的新伤、非碰撞和擦挂导致的单独划痕、车灯、轮胎、轮毂、玻璃、底盘、新增设备和车内零部件。</view>
 					 </uni-collapse-item>
-					 <uni-collapse-item v-if="indexstatus.more" title="Q13 一年最多充多少钱？" showAnimation="true">
-					 	<view style="padding: 30rpx;line-height: 2;font-size: 24upx;"> 缴纳互助金后，实际到账多少？ </view>
+					 <uni-collapse-item v-if="indexstatus.more" title="Q13 缴纳互助金后，实际到账多少？" showAnimation="true">
+					 	<view style="padding: 30rpx;line-height: 2;font-size: 24upx;"> 到账90%。缴纳互助金后，车辆在进入保障时，平台扣除10%的管理费，剩余的90%到账互助金余额。 </view>
 					 </uni-collapse-item>
 				 </uni-collapse>
 			</view>
@@ -122,7 +122,7 @@
 <script>
 	import uniCollapse from '@/components/uni-collapse/uni-collapse.vue';
 	import uniCollapseItem from '@/components/uni-collapse-item/uni-collapse-item.vue';  
-	import { indexinfo,goUserDetail } from '@/static/js/api.js'
+	import { indexinfo,goUserDetail,publicity } from '@/static/js/api.js'
 	export default {
 	    components: {uniCollapse,uniCollapseItem}, 
 		data(){
@@ -130,7 +130,8 @@
 				resdetail:{
 					amtPaid: 0,
 					carCount: 0,
-					eventCount: 0
+					eventCount: 0,
+					finishCount:0
 				},
 				indexstatus:{
 					more:false,
@@ -149,8 +150,20 @@
 				}
 				
 			})
+			publicity({
+				
+			}).then((res)=>{
+				if(res.code==="200"){
+					this.resdetail.finishCount = res.data.finishCount
+				}
+			})
 		},
 		methods:{
+			gohelp(){
+				uni.switchTab({
+					url:"/pages/talk/index"
+				})
+			},
 			download(){
 				uni.navigateTo({
 					url:"/pages/index/download/download"

@@ -25,7 +25,7 @@
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#2d8afe",
-    "borderStyle": "white",
+    "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
@@ -48,6 +48,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap39.json"
+  "usingComponents": {}
 }

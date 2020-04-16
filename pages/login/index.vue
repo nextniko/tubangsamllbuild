@@ -105,12 +105,16 @@
 				}
 			},
 			login:function(){ 
+				uni.showLoading({
+				    title: '登录中'
+				});
 				let that = this
 				if(this.checkbox){
 					tubanglogin({
 						phoneAndCode:that.user.phone+"_"+that.user.code,
 						fromUserName:that.openid
 					}).then((res)=>{
+						uni.hideLoading();
 						if(res.code==="200"){
 							uni.setStorageSync('token', res.data.token);
 							if(res.data.carList.length>0){

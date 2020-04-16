@@ -14,7 +14,7 @@
 	import { getPrepay } from '@/static/js/login/wxlogin/index.js'
 	// wx支付方法
 	import { paymodewx } from '@/static/js/pay/wxpay/index.js'
-	import { tubanglogin } from '@/static/js/api.js'
+	import { tubanglogin,wxPayCarResult } from '@/static/js/api.js'
 	export default {
 		data(){
 			return{
@@ -41,6 +41,9 @@
 		methods:{
 			// 微信支付
 			wxpay(){
+				wxPayCarResult().then((res)=>{
+					console.log(res)
+				})
 				paymodewx({
 					nonce_str:this.nonceStr,
 					prepay_id:this.prepay_id

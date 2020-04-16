@@ -1674,9 +1674,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 163:
-/*!******************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/components/uni-icons/icons.js ***!
-  \******************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/components/uni-icons/icons.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1816,9 +1816,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 19:
-/*!***********************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/image/heade.png ***!
-  \***********************************************************/
+/*!******************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/image/heade.png ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7857,9 +7857,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!*************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/image/account.png ***!
-  \*************************************************************/
+/*!********************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/image/account.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7868,9 +7868,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACR
 /***/ }),
 
 /***/ 21:
-/*!**********************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/image/tel1.png ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/image/tel1.png ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7879,16 +7879,16 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACR
 /***/ }),
 
 /***/ 24:
-/*!*****************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/js/api.js ***!
-  \*****************************************************/
+/*!************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/js/api.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getopenid = getopenid;exports.getcode = getcode;exports.tubanglogin = tubanglogin;exports.servicecity = servicecity;exports.indexinfo = indexinfo;exports.publicityList = publicityList;exports.publicity = publicity;exports.publicitydetail = publicitydetail;exports.goUserDetail = goUserDetail;exports.carList = carList;exports.bindcar = bindcar;exports.addcar = addcar;exports.uploadimg = uploadimg;
-var url = "https://tbsmall.jiayibao.net";
-// const url = "http://192.168.0.22:8080"
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getopenid = getopenid;exports.getcode = getcode;exports.tubanglogin = tubanglogin;exports.servicecity = servicecity;exports.indexinfo = indexinfo;exports.publicityList = publicityList;exports.publicity = publicity;exports.publicitydetail = publicitydetail;exports.goUserDetail = goUserDetail;exports.carList = carList;exports.bindcar = bindcar;exports.addcar = addcar;exports.uploadimg = uploadimg;exports.wxPayCarResult = wxPayCarResult;
+// const url = "https://tbsmall.jiayibao.net"
+var url = "http://192.168.0.29:8080";
 //登录前的微信验证
 
 function getopenid(data) {
@@ -8124,6 +8124,24 @@ function uploadimg(data) {
 
   });
 }
+
+// 支付回调
+function wxPayCarResult(data) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: url + '/paymentRepairResult',
+      data: data,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' },
+
+      method: "POST",
+      success: function success(res) {
+        // this.$set()
+        resolve(res.data);
+      } });
+
+  });
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -8160,9 +8178,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!***********************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/pages.json ***!
-  \***********************************************/
+/*!******************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/pages.json ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9070,9 +9088,9 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ }),
 
 /***/ 65:
-/*!******************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/js/date.js ***!
-  \******************************************************/
+/*!*************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/js/date.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9104,21 +9122,21 @@ function padLeftZero(str) {
 /***/ }),
 
 /***/ 7:
-/*!****************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/pages.json?{"type":"style"} ***!
-  \****************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/pages.json?{"type":"style"} ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/myinfo/index": { "navigationBarTitleText": "我的", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/index": { "navigationBarTitleText": "途邦互助", "usingComponents": { "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" }, "usingAutoImportComponents": {} }, "pages/talk/index": { "navigationBarTitleText": "互助公示", "enablePullDownRefresh": true, "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" }, "usingAutoImportComponents": {} }, "pages/login/index": { "navigationBarTitleText": "登录/注册", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/addcar/index": { "navigationBarTitleText": "添加车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/talk/talkDetail/index": { "navigationBarTitleText": "事件详情", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/index": { "navigationBarTitleText": "测试页", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/download/download": { "navigationBarTitleText": "下载APP", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/index": { "navigationBarTitleText": "支付", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/upload/index": { "navigationBarTitleText": "上传车辆照片", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/carinfo/index": { "navigationBarTitleText": "绑定车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/user/index": { "navigationBarTitleText": "用户协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/privacy/index": { "navigationBarTitleText": "隐私协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/myinfo/twocode/index": { "navigationBarTitleText": "我的邀请码", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "途邦互助", "navigationBarBackgroundColor": "#2D8AFE", "backgroundColor": "#fff" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/myinfo/index": { "navigationBarTitleText": "我的", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/index": { "navigationBarTitleText": "途邦互助", "usingComponents": { "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" }, "usingAutoImportComponents": { "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" } }, "pages/talk/index": { "navigationBarTitleText": "互助公示", "enablePullDownRefresh": true, "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" }, "usingAutoImportComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/login/index": { "navigationBarTitleText": "登录/注册", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/addcar/index": { "navigationBarTitleText": "添加车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/talk/talkDetail/index": { "navigationBarTitleText": "事件详情", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/index": { "navigationBarTitleText": "测试页", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/download/download": { "navigationBarTitleText": "下载APP", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/index": { "navigationBarTitleText": "支付", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/wxpay/upload/index": { "navigationBarTitleText": "上传车辆照片", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/carinfo/index": { "navigationBarTitleText": "绑定车辆", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/user/index": { "navigationBarTitleText": "用户协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/privacy/index": { "navigationBarTitleText": "隐私协议", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/myinfo/twocode/index": { "navigationBarTitleText": "我的邀请码", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "途邦互助", "navigationBarBackgroundColor": "#2D8AFE", "backgroundColor": "#fff" } };exports.default = _default;
 
 /***/ }),
 
 /***/ 74:
-/*!*******************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/node_modules/js-md5/src/md5.js ***!
-  \*******************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/node_modules/js-md5/src/md5.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9807,7 +9825,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     }
   }
 })();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 75), __webpack_require__(/*! ./../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../编译工具/hbuilderx/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 75), __webpack_require__(/*! ./../../../../../../../编译工具/hbuilderx/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
 
 /***/ }),
 
@@ -10103,9 +10121,9 @@ module.exports = __webpack_amd_options__;
 /***/ }),
 
 /***/ 78:
-/*!*****************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/js/md5.js ***!
-  \*****************************************************/
+/*!************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/js/md5.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10318,9 +10336,9 @@ module.exports = {
 /***/ }),
 
 /***/ 8:
-/*!***************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/pages.json?{"type":"stat"} ***!
-  \***************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/pages.json?{"type":"stat"} ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10330,9 +10348,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 93:
-/*!*********************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/js/login/wxlogin/index.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/js/login/wxlogin/index.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10345,7 +10363,7 @@ exports.mch_id = mch_id;var key = "e3397ccc937698590f1d4a6a29f85557"; //商户�
 exports.key = key;var openid = "";
 var session_key = "";
 var body = "mutual"; //商品名必填,没有编码不能用中文
-var notify_url = "http://tb.jytat.net"; //通知地址必填
+var notify_url = "http://tb.jytat.net/wxPayCarResult"; //通知地址必填
 var spbill_create_ip = "222.209.107.65"; //终端ip
 var prepay_id = ""; //统一下单
 
@@ -10416,9 +10434,9 @@ function getPrepay(data) {
 /***/ }),
 
 /***/ 94:
-/*!*****************************************************************!*\
-  !*** D:/外包项目/加一宝/tubangsamllbuild/static/js/pay/wxpay/index.js ***!
-  \*****************************************************************/
+/*!************************************************************************!*\
+  !*** D:/njl/项目/jiayibao/mutual/tubangpre/static/js/pay/wxpay/index.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -1,4 +1,4 @@
-.displayflex.data-v-0e27ec52,.talk-li.data-v-0e27ec52 {
+.displayflex.data-v-52ca3136,.talk-li.data-v-52ca3136 {
 	display: -webkit-box;
 	display: -weblit-flex;
 	display: -webkit-flex;
@@ -7,7 +7,7 @@
 	-webkit-align-items: center;
 	        align-items: center;
 }
-.talk-box.data-v-0e27ec52 {
+.talk-box.data-v-52ca3136 {
 	-webkit-justify-content: space-around;
 	        justify-content: space-around;
 	/* padding: 8.26upx 0; */
@@ -23,19 +23,19 @@
 	box-shadow: 0 0 5px #2F89FF;
 	border-radius:0px 0px 20px 20px;
 }
-.talk-box .txt-yellow.data-v-0e27ec52 {
+.talk-box .txt-yellow.data-v-52ca3136 {
 	font-size:34rpx;
 	color:rgba(45,138,254,1);
 	margin-bottom:10rpx;
 	font-family: Helvetica;
 }
-.talk-event.data-v-0e27ec52 {
+.talk-event.data-v-52ca3136 {
 	border-bottom: 2rpx solid #e5e5e5;
 }
-.talk-event view.data-v-0e27ec52{
+.talk-event view.data-v-52ca3136{
 	position: relative;
 }
-.zhedie.data-v-0e27ec52{
+.zhedie.data-v-52ca3136{
 	display: -webkit-box;
 	display: -weblit-flex;
 	display: -webkit-flex;
@@ -43,34 +43,34 @@
 	position: relative;
 }
 /* 互助公示 */
-.talklist.data-v-0e27ec52{
+.talklist.data-v-52ca3136{
 	padding: 0 24rpx 17rpx;
 	font-weight: bold;
 	font-size:30rpx;
 	color: rgb(102, 102, 102);
 	margin-top: 200rpx;
 }
-.zhedie ._ul.data-v-0e27ec52{
+.zhedie ._ul.data-v-52ca3136{
 	width: 100%;
 	background-color: #FFFFFF;
 }
 /* 列表样式 */
-.talk-li.data-v-0e27ec52 {
+.talk-li.data-v-52ca3136 {
 	padding: 20rpx 30rpx;
 	background-color: #fff;
 	border-top: 1rpx solid #e5e5e5;
 }
-.talk-limg.data-v-0e27ec52 {
+.talk-limg.data-v-52ca3136 {
 	position: relative;
 }
-.talk-head-img.data-v-0e27ec52 {
+.talk-head-img.data-v-52ca3136 {
 	display: inline-block;
 	height: 120rpx;
 	width: 120rpx;
 	border-radius: 50%;
 	border: 1rpx solid #ccc;
 }
-.talk-text.data-v-0e27ec52 {
+.talk-text.data-v-52ca3136 {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	        flex: 1;
@@ -79,13 +79,13 @@
 	line-height: 28rpx;
 	color: #666;
 }
-.talk-tel.data-v-0e27ec52{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;justify-content: space-between;}
-.talk-arrow.data-v-0e27ec52 {
+.talk-tel.data-v-52ca3136{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;justify-content: space-between;}
+.talk-arrow.data-v-52ca3136 {
 	width: 17rpx;
 	height: 17rpx;
 	position: relative;
 }
-.talk-arrow.data-v-0e27ec52:before {
+.talk-arrow.data-v-52ca3136:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -97,9 +97,9 @@
 	-webkit-transform: rotate(135deg);
 	        transform: rotate(135deg);
 }
-.talk-text .txt-yellow.data-v-0e27ec52{color: #2d8afe;margin-left: 20rpx;}
-.txt-color58.data-v-0e27ec52 {
+.talk-text .txt-yellow.data-v-52ca3136{color: #2d8afe;margin-left: 20rpx;}
+.txt-color58.data-v-52ca3136 {
 	color: #585858;
 }
-.talk-price.data-v-0e27ec52{margin:16rpx 0;}
+.talk-price.data-v-52ca3136{margin:16rpx 0;}
 

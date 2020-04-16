@@ -26,7 +26,7 @@
 				</view>
 				<view class="talk-text">
 				  <p class="talk-tel">
-					<text>{{item.nameCarOwner?item.nameCarOwner:"0"}}</text>
+					<text>{{item.nameCarOwner?item.nameCarOwner:"未留下姓名"}}</text>
 					<text class="txt-yellow">· {{item.licensePlateNumber?item.licensePlateNumber:"0"}}</text>
 				  </p>
 				  <p class="talk-price">维修价格：<text class="txt-color58">{{item.amtAssert?item.amtAssert:"0"}}元</text></p>

@@ -111,6 +111,7 @@
 						id:uni.getStorageSync('id'),
 						token:uni.getStorageSync('token'),
 					}).then(res=>{
+						console.log(res)
 						uni.hideLoading();
 						if(res.code === "200"){
 							if(res.data ==="SUCCESS"){
