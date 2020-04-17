@@ -47,7 +47,7 @@ body {background: #f6f6f6;}
 .p2{background: #ffcc5b;background: linear-gradient(135deg,#ffe285,#2d8afe);}
 .p3{background: #7feeb4;background: linear-gradient(135deg,#9bf5c5,#57e399);}
 /* 图片放大 */
-.windbg{position: fixed;top:0;left: 0;width: 100%;height: 100%;background: rgb(0,0,0,0.5);z-index: 99;}
+.windbg{position: fixed;top:0;left: 0;width: 100%;height: 100%;z-index: 99;}
 .my-swipe{height:100%;}
 .van-swipe__indicator{width: 20upx;height: 20upx;}
 /* 车主评价 */

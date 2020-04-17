@@ -336,26 +336,11 @@ var _date = __webpack_require__(/*! @/static/js/date.js */ 65);function _defineP
       index: "",
       starList: [0, 1, 2, 3, 4],
       SwiperImg: [
-      {
-        type: "image",
-        url: "../../../static/image/indexbanner.png" },
-
-      {
-        type: "image",
-        url: "../../../static/image/indexbanner.png" },
-
-      {
-        type: "image",
-        url: "../../../static/image/indexbanner.png" },
-
-      {
-        type: "image",
-        url: "../../../static/image/indexbanner.png" },
-
-      {
-        type: "image",
-        url: "../../../static/image/indexbanner.png" }] };
-
+      "../../../static/image/indexbanner.png",
+      "../../../static/image/indexbanner.png",
+      "../../../static/image/indexbanner.png",
+      "../../../static/image/indexbanner.png",
+      "../../../static/image/indexbanner.png"] };
 
 
   },
@@ -368,20 +353,20 @@ var _date = __webpack_require__(/*! @/static/js/date.js */ 65);function _defineP
   computed: {
     // 车辆定损
     time1: function time1() {
-      if (this.resdetail.assertEndTime.time) {
+      if (this.resdetail.assertEndTime.time !== "undefined") {
         return (0, _date.formatDate)(new Date(Number(this.resdetail.assertEndTime.time)), 'yyyy年MM月dd日');
       }
     },
     // 维修报告
     time2: function time2() {
-      if (this.resdetail.repairEndTime.time) {
+      if (this.resdetail.repairEndTime.time !== "undefined") {
         return (0, _date.formatDate)(new Date(Number(this.resdetail.repairEndTime.time)), 'yyyy年MM月dd日');
 
       }
     },
     // 车主评价
     time3: function time3() {
-      if (this.resdetail.commentTime.time) {
+      if (this.resdetail.commentTime.time !== "undefined") {
         return (0, _date.formatDate)(new Date(Number(this.resdetail.commentTime.time)), 'yyyy年MM月dd日');
       }
     } },
@@ -393,16 +378,33 @@ var _date = __webpack_require__(/*! @/static/js/date.js */ 65);function _defineP
         eventNo: this.eventNo }).
       then(function (res) {
         _this.resdetail = res.data;
+        var aaa =
+        console.log(aaa);
+        _this.resdetail.accidentImg = _this.resdetail.accidentImg.split("__");
+        _this.resdetail.assertImg = _this.resdetail.assertImg.split("__");
+        _this.resdetail.repairImg = _this.resdetail.repairImg.split("__");
         if (_this.resdetail.commentLabelContent) {
           _this.resdetail.commentLabelContent = _this.resdetail.commentLabelContent.split('_');
         }
-
       });
     },
     back: function back() {
       this.$router.go(-1);
     },
-    windShow: function windShow() {
+    windShow: function windShow(ava) {
+      switch (ava) {
+        case "1":
+          this.SwiperImg = this.resdetail.accidentImg;
+          break;
+        case "2":
+          this.SwiperImg = this.resdetail.assertImg;
+          break;
+        case "3":
+          this.SwiperImg = this.resdetail.repairImg;
+          break;
+        default:
+          break;}
+
       this.isshow = !this.isshow;
     } } };exports.default = _default;
 

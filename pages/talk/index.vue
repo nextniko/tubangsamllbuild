@@ -31,7 +31,7 @@
 				  </p>
 				  <p class="talk-price">维修价格：<text class="txt-color58">{{item.amtAssert?item.amtAssert:"0"}}元</text></p>
 				  <p class="talk-tel">
-					  <label>全员预计分摊：<text class="txt-color58">{{item.amtShare}}元</text></label>
+					  <label>全员预计分摊：<text class="txt-color58">{{item.amtShare?item.amtShare:"0"}}元</text></label>
 					  <text class="talk-arrow"></text>
 					</p>
 				</view>

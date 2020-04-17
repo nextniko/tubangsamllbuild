@@ -3,7 +3,7 @@
 			<!-- 车辆信息 -->
 			<view class="car-info">
 				<view class="left">
-					<image :src="resdetail.accidentImg" alt="" class="talk-head-image">
+					<image :src="resdetail.portrait" alt="" class="talk-head-image">
 				</view>
 				<view class="right">
 					<p>
@@ -37,9 +37,9 @@
 								{{item.url}}
 								<view><image :src="item.url" ></view>
 							</li> -->
-							<li v-for="(item,index) in 1" :key="index" @click="windShow">
+							<li v-for="item in resdetail.accidentImg" :key="item" @click="windShow('1')">
 								<view>
-									<image :src="resdetail.accidentImg" ></image>
+									<image :src="item" ></image>
 								</view>
 							</li>
 						</ul>
@@ -92,8 +92,8 @@
 							</li>
 						</ul>
 						<ul class="image-ul clear">
-							<li v-for="(item,index) in 1" :key="index" @click="windShow">
-								<view><image :src="resdetail.assertImg" ></view>
+							<li v-for="item in resdetail.assertImg" :key="item" @click="windShow('2')">
+								<view><image :src="item" ></view>
 							</li>
 						</ul>
 					</view>
@@ -110,8 +110,8 @@
 					<view class="item-cont">
 						<p class="txt-describe">修复打磨</p>
 						<ul class="image-ul clear">
-							<li v-for="(item,index) in 1" :key="index" @click="windShow">
-								<view><image :src="resdetail.repairImg" /></view>
+							<li v-for="item in resdetail.repairImg" :key="item" @click="windShow('3')">
+								<view><image :src="item" /></view>
 							</li>
 						</ul>
 					</view>
@@ -145,7 +145,7 @@
 				</view>
 			</view>
 			<!-- 图片放大 -->
-			<view class="windbg" v-if="isshow" @click="windShow">
+			<view class="windbg" style="background-color: #000000;" v-if="isshow" @click="windShow">
 				<view class="uni-margin-wrap">
 					<swiper
 						class="card-swiper"
@@ -155,9 +155,9 @@
 						indicator-color="#ffffff"
 						indicator-active-color="#0081ff"
 					>
-						<swiper-item v-for="(item, index) in SwiperImg" :key="index">
+						<swiper-item v-for="item in SwiperImg" :key="item">
 							<view class="swiper-item">
-								<image :src="item.url" mode="aspectFill"></image>
+								<image :src="item" mode="aspectFill"></image>
 							</view>
 						</swiper-item>
 					</swiper>
@@ -201,26 +201,11 @@
 				index:"",
 				starList:[0,1,2,3,4],
 		        SwiperImg:[
-					{
-						type:"image",
-						url:"../../../static/image/indexbanner.png"
-					},
-					{
-						type:"image",
-						url:"../../../static/image/indexbanner.png"
-					},
-					{
-						type:"image",
-						url:"../../../static/image/indexbanner.png"
-					},
-					{
-						type:"image",
-						url:"../../../static/image/indexbanner.png"
-					},
-					{
-						type:"image",
-						url:"../../../static/image/indexbanner.png"
-					}
+					"../../../static/image/indexbanner.png",
+					"../../../static/image/indexbanner.png",
+					"../../../static/image/indexbanner.png",
+					"../../../static/image/indexbanner.png",
+					"../../../static/image/indexbanner.png"
 				]
 		    }
 		},
@@ -233,20 +218,20 @@
 		computed:{
 			// 车辆定损
 			time1:function(){
-				if(this.resdetail.assertEndTime.time){
+				if(this.resdetail.assertEndTime.time !== "undefined"){
 					return formatDate(new Date(Number(this.resdetail.assertEndTime.time)),'yyyy年MM月dd日')
 				}
 			},
 			// 维修报告
 			time2:function(){
-				if(this.resdetail.repairEndTime.time){
+				if(this.resdetail.repairEndTime.time !== "undefined"){
 					return formatDate(new Date(Number(this.resdetail.repairEndTime.time)),'yyyy年MM月dd日')
 					
 				}
 			},
 			// 车主评价
 			time3:function(){
-				if(this.resdetail.commentTime.time){
+				if(this.resdetail.commentTime.time !== "undefined"){
 					return formatDate(new Date(Number(this.resdetail.commentTime.time)),'yyyy年MM月dd日')
 				}
 			}
@@ -258,16 +243,33 @@
 					eventNo:this.eventNo
 				}).then((res)=>{
 					this.resdetail = res.data
+					let aaa =  
+					console.log(aaa)
+					this.resdetail.accidentImg = this.resdetail.accidentImg.split("__")
+					this.resdetail.assertImg = this.resdetail.assertImg.split("__")
+					this.resdetail.repairImg = this.resdetail.repairImg.split("__")
 					if(this.resdetail.commentLabelContent){
 						this.resdetail.commentLabelContent = this.resdetail.commentLabelContent.split('_')
 					}
-					
 				})
 			},
 			back() {
 				this.$router.go(-1);
 			},
-			windShow(){
+			windShow(ava){
+				switch(ava){
+					case "1":
+						this.SwiperImg = this.resdetail.accidentImg
+						break;
+					case "2":
+						this.SwiperImg = this.resdetail.assertImg
+						break;
+					case "3":
+						this.SwiperImg = this.resdetail.repairImg
+						break;
+					default:
+						break;
+				}
 				this.isshow=!this.isshow
 			}
 		},
