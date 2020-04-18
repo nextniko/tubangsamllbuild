@@ -162,11 +162,23 @@ var _api = __webpack_require__(/*! @/static/js/api.js */ 24); //
 // 获取 统一下单的方法
 // wx支付方法
 var _default = { data: function data() {return { // 支付金额
-      money: 0.01, nonceStr: (0, _md.md5)(Math.ceil(Math.random() * 1000).toString()).toUpperCase(), prepay_id: "" //统一下单
-    };}, onShow: function onShow() {var _this = this;if (uni.getStorageSync('amtCompensation') < 1000) {this.money = 29;console.log(this.money);} else {
-      this.money = 99;
-      console.log(this.money);
+      money: [{ type: "首冲以及次冲", count: 99 }],
+
+      nonceStr: (0, _md.md5)(Math.ceil(Math.random() * 1000).toString()).toUpperCase(),
+      prepay_id: "" //统一下单
+    };
+  },
+  onShow: function onShow() {var _this = this;
+    if (uni.getStorageSync('amtCompensation') && uni.getStorageSync('amtCompensation') !== "") {
+      if (uni.getStorageSync('amtCompensation') < 1000) {
+        this.money[0].count = 29;
+      } else {
+        this.money[0].count = 99;
+      }
+    } else {
+      this.money[0].count = 99;
     }
+
     (0, _index.getPrepay)({
       moneny: parseInt(this.money * 100) }).
     then(function (res) {
@@ -176,9 +188,6 @@ var _default = { data: function data() {return { // 支付金额
   methods: {
     // 微信支付
     wxpay: function wxpay() {
-      (0, _api.wxPayCarResult)().then(function (res) {
-        console.log(res);
-      });
       (0, _index2.paymodewx)({
         nonce_str: this.nonceStr,
         prepay_id: this.prepay_id }).

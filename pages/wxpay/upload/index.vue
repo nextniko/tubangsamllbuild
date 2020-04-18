@@ -113,8 +113,7 @@
 					}).then(res=>{
 						console.log(res)
 						uni.hideLoading();
-						if(res.code === "200"){
-							if(res.data ==="SUCCESS"){
+						if(res.code === "200" && res.data ==="SUCCESS"){
 								uni.showToast({
 									icon:"none",
 								    title: "上传成功",
@@ -126,13 +125,12 @@
 										url:"/pages/index/index"
 									})
 								},2000)
-							}else{
-								uni.showToast({
-									icon:"none",
-								    title: res.message,
-								    duration: 2000
-								});
-							}
+						}else{
+							uni.showToast({
+								icon:"none",
+								title: res.message,
+								duration: 2000
+							});
 						}
 					})
 				}

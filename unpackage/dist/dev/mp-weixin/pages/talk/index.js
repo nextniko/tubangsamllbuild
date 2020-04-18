@@ -95,10 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components = {
-  "uni-load-more": () =>
-    __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ 151))
-}
+var components
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -211,17 +208,12 @@ var _api = __webpack_require__(/*! @/static/js/api.js */ 24);var uniLoadMore = f
 
 
 
-      loadingText: '加载中...',
-      loadingType: 0,
-      contentText: {
-        contentdown: '上拉显示更多',
-        contentrefresh: '正在加载...',
-        contentnomore: '没有更多数据了' } };
-
+      pullstatus: true };
 
 
   },
   onShow: function onShow() {
+
     this.api();
   },
   onLoad: function onLoad(options) {
@@ -230,7 +222,8 @@ var _api = __webpack_require__(/*! @/static/js/api.js */ 24);var uniLoadMore = f
   },
   methods: {
     api: function api() {var _this = this;
-
+      this.resdetail.pageNo = 1;
+      this.pullstatus = true;
       (0, _api.publicityList)({
         pageNo: this.resdetail.pageNo,
         flag: "2" }).
@@ -267,26 +260,37 @@ var _api = __webpack_require__(/*! @/static/js/api.js */ 24);var uniLoadMore = f
     } },
 
   onPullDownRefresh: function onPullDownRefresh() {
-    this.resdetail.pageNo = 1;
     this.api();
   },
   onReachBottom: function onReachBottom() {var _this2 = this;
-    uni.showLoading({
-      title: '加载中' });
+    if (this.pullstatus) {
+      uni.showLoading({
+        title: '加载中' });
 
-    this.resdetail.pageNo++;
-    (0, _api.publicityList)({
-      pageNo: this.resdetail.pageNo,
-      flag: "2" }).
-    then(function (res) {
-      if (res.code === "200") {
-        res.data.list.map(function (item) {
-          _this2.resdetail.detaillist.list.push(item);
-        });
-      }
-      uni.hideLoading();
-    });
+      this.resdetail.pageNo++;
+      (0, _api.publicityList)({
+        pageNo: this.resdetail.pageNo,
+        flag: "2" }).
+      then(function (res) {
+        uni.hideLoading();
+        if (res.code === "200") {
+          res.data.list.map(function (item) {
+            _this2.resdetail.detaillist.list.push(item);
+          });
+          if (res.data.list.length === 0) {
+            uni.showToast({
+              icon: "none",
+              title: "没有更多了",
+              duration: 2000 });
 
+            _this2.pullstatus = false;
+          }
+        }
+
+      });
+    } else {
+      return;
+    }
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -1,6 +1,6 @@
 
-// const url = "https://tbsmall.jiayibao.net"
-const url = "http://192.168.0.29:8080"
+const url = "https://tbsmall.jiayibao.net"
+// const url = "http://192.168.0.29:8080"
 //登录前的微信验证
 
 export function getopenid(data){
@@ -21,7 +21,7 @@ export function getopenid(data){
 					data:{code:data.code},
 					method:"GET",
 					success: res => {
-						resolve(res.data)
+						resolve(res.data) 
 					}
 				});
 			 }
@@ -233,24 +233,6 @@ export function uploadimg(data){
 				// this.$set()
 				resolve(res.data)
 		    }
-		});
-	})
-}
-
-// 支付回调
-export function wxPayCarResult(data){
-	return new Promise((resolve,reject)=>{
-		uni.request({
-			url: url+'/paymentRepairResult',
-			data: data,
-			header: {
-				'content-type': 'application/x-www-form-urlencoded' 
-			},
-			method:"POST",
-			success: (res) => {
-				// this.$set()
-				resolve(res.data)
-			}
 		});
 	})
 }

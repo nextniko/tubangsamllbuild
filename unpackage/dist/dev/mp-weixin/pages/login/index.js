@@ -188,8 +188,7 @@ var _api = __webpack_require__(/*! @/static/js/api.js */ 24); //
 //
 //
 //
-var _default = { data: function data() {return { user: { phone: "", code: "", codestatus: false, codetime: 60, status: false, fromid: null }, openid: "", checkbox: true };}, onLoad: function onLoad(option) {if (option.scene) {this.user.fromid = decodeURIComponent(option.scene);console.log(this.user.fromid);}}, onShow: function onShow() {uni.removeStorageSync('token');uni.removeStorageSync('userId');uni.removeStorageSync('id');uni.removeStorageSync('customerPN');uni.removeStorageSync('status');
-    uni.removeStorageSync('openid');
+var _default = { data: function data() {return { user: { phone: "", code: "", codestatus: false, codetime: 60, status: false, fromid: null }, openid: "", checkbox: true };}, onLoad: function onLoad(option) {if (option.scene) {this.user.fromid = decodeURIComponent(option.scene);}}, onShow: function onShow() {uni.removeStorageSync('token');uni.removeStorageSync('userId');uni.removeStorageSync('id');uni.removeStorageSync('customerPN');uni.removeStorageSync('status');uni.removeStorageSync('openid');
     var that = this;
     wx.login({
       // login获取code
@@ -240,19 +239,20 @@ var _default = { data: function data() {return { user: { phone: "", code: "", co
       }
     },
     login: function login() {
-      uni.showLoading({
-        title: '登录中' });
 
       var that = this;
       if (this.checkbox) {
+        uni.showLoading({
+          title: '登录中' });
+
         (0, _api.tubanglogin)({
           phoneAndCode: that.user.phone + "_" + that.user.code,
-          fromUserName: that.openid }).
+          fromUserNameTwo: that.openid }).
         then(function (res) {
           uni.hideLoading();
           if (res.code === "200") {
             uni.setStorageSync('token', res.data.token);
-            if (res.data.carList.length > 0) {
+            if (res.data.carList && res.data.carList.length > 0) {
               uni.setStorageSync('id', Number(res.data.carList[0].id));
               uni.setStorageSync('userId', Number(res.data.carList[0].userId));
               uni.setStorageSync('customerPN', Number(res.data.carList[0].customerPN));
@@ -265,6 +265,7 @@ var _default = { data: function data() {return { user: { phone: "", code: "", co
               uni.setStorageSync('amtCompensation', "");
               uni.setStorageSync('status', "");
             }
+
             uni.switchTab({
               url: "/pages/index/index" });
 

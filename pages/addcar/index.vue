@@ -282,23 +282,38 @@
 						licensePlateNumber:this.text+this.Cityid.carnumber,
 						drvingCity:this.Cityid.cityid,
 					}).then((res)=>{
+						console.log(res)
 						uni.hideLoading()
 						if(res.code ==="200" && res.message === "SUCCESS"){
 							if(this.addstatus){
 								this.addstatus = false
-								uni.setStorageSync('status',1)
 								uni.setStorageSync('id',res.data.id)
-								uni.showToast({
-									icon:"none",
-									title: "添加成功",
-									duration: 2000
-								});
-								uni.hideLoading();
-								setTimeout(()=>{
-									uni.navigateTo({
-										url:"/pages/wxpay/index"
-									})
-								},1500)
+								if(res.data.noNeedPay==="0"){
+									uni.setStorageSync('status',1)
+									uni.showToast({
+										icon:"none",
+										title: "添加成功",
+										duration: 2000
+									});
+									setTimeout(()=>{
+										uni.navigateTo({
+											url:"/pages/wxpay/index"
+										})
+									},1500)
+								}else{
+									uni.setStorageSync('status',2)
+									uni.showToast({
+										icon:"none",
+										title: "添加成功",
+										duration: 2000
+									});
+									setTimeout(()=>{
+										uni.navigateTo({
+											url:"/pages/wxpay/upload/index"
+										})
+									},1500)
+								}
+								
 								
 							}else{
 								this.addstatus = true

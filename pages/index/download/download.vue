@@ -1,6 +1,6 @@
 <template>
 	<view class="download">
-		<image src="../../../static/image/downloadapp.png" mode=""></image>
+		<image src="../../../static/image/downloadapp.jpg" mode=""></image>
 	</view>
 </template>
  

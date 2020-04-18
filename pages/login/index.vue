@@ -13,7 +13,7 @@
 				<view class="loginicon">
 					<image src="../../static/image/password.png"></image>
 				</view>
-				<input class="logininput" v-model="user.code" type="password" maxlength="4" placeholder="请输入短信中的验证码" />
+				<input class="logininput" v-model="user.code" type="tel" maxlength="4" placeholder="请输入短信中的验证码" />
 			</li>
 		</ul>
 		<view class="Agreement">
@@ -45,7 +45,6 @@
 		onLoad:function(option){
 			if(option.scene){
 				this.user.fromid = decodeURIComponent(option.scene)
-				console.log(this.user.fromid)
 			}
 		},
 		onShow(){
@@ -105,19 +104,20 @@
 				}
 			},
 			login:function(){ 
-				uni.showLoading({
-				    title: '登录中'
-				});
+				
 				let that = this
 				if(this.checkbox){
+					uni.showLoading({
+					    title: '登录中'
+					});
 					tubanglogin({
 						phoneAndCode:that.user.phone+"_"+that.user.code,
-						fromUserName:that.openid
+						fromUserNameTwo:that.openid
 					}).then((res)=>{
 						uni.hideLoading();
 						if(res.code==="200"){
 							uni.setStorageSync('token', res.data.token);
-							if(res.data.carList.length>0){
+							if(res.data.carList&&res.data.carList.length>0){
 								uni.setStorageSync('id', Number(res.data.carList[0].id));
 								uni.setStorageSync('userId', Number(res.data.carList[0].userId));
 								uni.setStorageSync('customerPN', Number(res.data.carList[0].customerPN));
@@ -130,6 +130,7 @@
 								uni.setStorageSync('amtCompensation',"");
 								uni.setStorageSync('status', "");
 							}
+							
 							uni.switchTab({
 								url:"/pages/index/index"
 							})

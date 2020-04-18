@@ -417,23 +417,38 @@ var _default = { data: function data() {return { checkedbox: true, isAgreement: 
           licensePlateNumber: this.text + this.Cityid.carnumber,
           drvingCity: this.Cityid.cityid }).
         then(function (res) {
+          console.log(res);
           uni.hideLoading();
           if (res.code === "200" && res.message === "SUCCESS") {
             if (_this3.addstatus) {
               _this3.addstatus = false;
-              uni.setStorageSync('status', 1);
               uni.setStorageSync('id', res.data.id);
-              uni.showToast({
-                icon: "none",
-                title: "添加成功",
-                duration: 2000 });
+              if (res.data.noNeedPay === "0") {
+                uni.setStorageSync('status', 1);
+                uni.showToast({
+                  icon: "none",
+                  title: "添加成功",
+                  duration: 2000 });
 
-              uni.hideLoading();
-              setTimeout(function () {
-                uni.navigateTo({
-                  url: "/pages/wxpay/index" });
+                setTimeout(function () {
+                  uni.navigateTo({
+                    url: "/pages/wxpay/index" });
 
-              }, 1500);
+                }, 1500);
+              } else {
+                uni.setStorageSync('status', 2);
+                uni.showToast({
+                  icon: "none",
+                  title: "添加成功",
+                  duration: 2000 });
+
+                setTimeout(function () {
+                  uni.navigateTo({
+                    url: "/pages/wxpay/upload/index" });
+
+                }, 1500);
+              }
+
 
             } else {
               _this3.addstatus = true;

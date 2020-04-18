@@ -7886,9 +7886,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACR
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getopenid = getopenid;exports.getcode = getcode;exports.tubanglogin = tubanglogin;exports.servicecity = servicecity;exports.indexinfo = indexinfo;exports.publicityList = publicityList;exports.publicity = publicity;exports.publicitydetail = publicitydetail;exports.goUserDetail = goUserDetail;exports.carList = carList;exports.bindcar = bindcar;exports.addcar = addcar;exports.uploadimg = uploadimg;exports.wxPayCarResult = wxPayCarResult;
-// const url = "https://tbsmall.jiayibao.net"
-var url = "http://192.168.0.29:8080";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getopenid = getopenid;exports.getcode = getcode;exports.tubanglogin = tubanglogin;exports.servicecity = servicecity;exports.indexinfo = indexinfo;exports.publicityList = publicityList;exports.publicity = publicity;exports.publicitydetail = publicitydetail;exports.goUserDetail = goUserDetail;exports.carList = carList;exports.bindcar = bindcar;exports.addcar = addcar;exports.uploadimg = uploadimg;
+var url = "https://tbsmall.jiayibao.net";
+// const url = "http://192.168.0.29:8080"
 //登录前的微信验证
 
 function getopenid(data) {
@@ -8112,24 +8112,6 @@ function uploadimg(data) {
   return new Promise(function (resolve, reject) {
     uni.request({
       url: url + '/register',
-      data: data,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' },
-
-      method: "POST",
-      success: function success(res) {
-        // this.$set()
-        resolve(res.data);
-      } });
-
-  });
-}
-
-// 支付回调
-function wxPayCarResult(data) {
-  return new Promise(function (resolve, reject) {
-    uni.request({
-      url: url + '/paymentRepairResult',
       data: data,
       header: {
         'content-type': 'application/x-www-form-urlencoded' },
@@ -10364,6 +10346,7 @@ exports.key = key;var openid = "";
 var session_key = "";
 var body = "mutual"; //商品名必填,没有编码不能用中文
 var notify_url = "http://tb.jytat.net/wxPayCarResult"; //通知地址必填
+// let notify_url="http://192.168.0.29:8080/wxPayCarResult"//通知地址必填
 var spbill_create_ip = "222.209.107.65"; //终端ip
 var prepay_id = ""; //统一下单
 

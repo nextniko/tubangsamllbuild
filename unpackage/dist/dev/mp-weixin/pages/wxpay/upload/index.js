@@ -166,26 +166,24 @@ var _default = { data: function data() {return { image: [{ name: "", url: 'http:
         then(function (res) {
           console.log(res);
           uni.hideLoading();
-          if (res.code === "200") {
-            if (res.data === "SUCCESS") {
-              uni.showToast({
-                icon: "none",
-                title: "上传成功",
-                duration: 2000 });
+          if (res.code === "200" && res.data === "SUCCESS") {
+            uni.showToast({
+              icon: "none",
+              title: "上传成功",
+              duration: 2000 });
 
-              uni.setStorageSync('status', 10);
-              setTimeout(function () {
-                uni.switchTab({
-                  url: "/pages/index/index" });
+            uni.setStorageSync('status', 10);
+            setTimeout(function () {
+              uni.switchTab({
+                url: "/pages/index/index" });
 
-              }, 2000);
-            } else {
-              uni.showToast({
-                icon: "none",
-                title: res.message,
-                duration: 2000 });
+            }, 2000);
+          } else {
+            uni.showToast({
+              icon: "none",
+              title: res.message,
+              duration: 2000 });
 
-            }
           }
         });
       }

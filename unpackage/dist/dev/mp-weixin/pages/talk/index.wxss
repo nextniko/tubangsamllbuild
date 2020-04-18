@@ -102,4 +102,9 @@
 	color: #585858;
 }
 .talk-price.data-v-52ca3136{margin:16rpx 0;}
+.nomore.data-v-52ca3136{
+	font-size: 14rpx;
+	padding: 20rpx 0;
+	text-align: center;
+}
 

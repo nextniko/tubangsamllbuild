@@ -1,1 +1,1 @@
-<view class="wxpay"><view class="fontposition"><text>支付金额</text><text class="font-right">{{money+"元"}}</text></view><view data-event-opts="{{[['tap',[['wxpay',['$event']]]]]}}" class="wxpayclick" bindtap="__e">立即支付</view></view>
+<view class="wxpay"><block wx:for="{{money}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="fontposition"><text>支付金额</text><text class="font-right">{{item.count+"元"}}</text></view></block><view data-event-opts="{{[['tap',[['wxpay',['$event']]]]]}}" class="wxpayclick" bindtap="__e">立即支付</view></view>

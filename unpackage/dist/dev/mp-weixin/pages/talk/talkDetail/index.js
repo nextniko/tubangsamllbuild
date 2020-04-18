@@ -298,10 +298,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-
 var _api = __webpack_require__(/*! @/static/js/api.js */ 24);
 var _date = __webpack_require__(/*! @/static/js/date.js */ 65);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
@@ -378,8 +374,6 @@ var _date = __webpack_require__(/*! @/static/js/date.js */ 65);function _defineP
         eventNo: this.eventNo }).
       then(function (res) {
         _this.resdetail = res.data;
-        var aaa =
-        console.log(aaa);
         _this.resdetail.accidentImg = _this.resdetail.accidentImg.split("__");
         _this.resdetail.assertImg = _this.resdetail.assertImg.split("__");
         _this.resdetail.repairImg = _this.resdetail.repairImg.split("__");

@@ -37,8 +37,8 @@
 				</view>
 			  </li>
 			</ul>
-			<uni-load-more  ></uni-load-more>
 		</view>
+		<view class="nomore" v-if="!pullstatus">已显示全部</view>
 	</view>
 </template>
 <script>
@@ -73,17 +73,12 @@
 						]
 					}
 				},
-				loadingText: '加载中...',
-				loadingType: 0,
-				contentText: {
-					contentdown:'上拉显示更多',
-					contentrefresh: '正在加载...',
-					contentnomore: '没有更多数据了'
-				}
+				pullstatus:true
 
 			}
 		},
 		onShow(){
+			
 			this.api()
 		},
 		onLoad: function (options) {
@@ -92,7 +87,8 @@
 		},
 		methods:{
 			api:function(){
-				
+				this.resdetail.pageNo = 1
+				this.pullstatus = true
 				publicityList({
 					pageNo:this.resdetail.pageNo,
 					flag:"2",
@@ -129,26 +125,37 @@
 			},
 		},
 		onPullDownRefresh:function() {
-			this.resdetail.pageNo =1
 			this.api()
 		},
 		onReachBottom: function() {
-			uni.showLoading({
-			    title: '加载中'
-			});
-			this.resdetail.pageNo++
-			publicityList({
-				pageNo:this.resdetail.pageNo,
-				flag:"2",
-			}).then((res)=>{
-				if(res.code==="200"){
-					res.data.list.map(item=>{
-						this.resdetail.detaillist.list.push(item)
-					})
-				}
-				uni.hideLoading();
-			})
-			
+			if(this.pullstatus){
+				uni.showLoading({
+				    title: '加载中'
+				});
+				this.resdetail.pageNo++
+				publicityList({
+					pageNo:this.resdetail.pageNo,
+					flag:"2",
+				}).then((res)=>{
+					uni.hideLoading();
+					if(res.code==="200"){
+						res.data.list.map(item=>{
+							this.resdetail.detaillist.list.push(item)
+						})
+						if(res.data.list.length===0){
+							uni.showToast({
+								icon:"none",
+								title: "没有更多了",
+								duration: 2000
+							});
+							this.pullstatus = false
+						}
+					}
+					
+				})
+			}else{
+				return
+			}
 		}
 	}
 </script>

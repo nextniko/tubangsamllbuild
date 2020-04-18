@@ -7,6 +7,7 @@ let openid=""
 let session_key=""
 let body="mutual"//商品名必填,没有编码不能用中文
 let notify_url="http://tb.jytat.net/wxPayCarResult"//通知地址必填
+// let notify_url="http://192.168.0.29:8080/wxPayCarResult"//通知地址必填
 let spbill_create_ip = "222.209.107.65"//终端ip
 let prepay_id=""//统一下单
 

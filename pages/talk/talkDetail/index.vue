@@ -33,10 +33,6 @@
 						<p class="txt-yellow">平台审核说明：审核通过，予以救助。会员特权升级活动火热进行中！请前往"我的会员卡—马上邀请"</p>
 						<p class="txt-describe">车主事故描述：{{resdetail.accidentDescription}}</p>
 						<ul class="image-ul clear">
-							<!-- <li v-for="(item,index) in Swiperimage" :key="index" @click="windShow">
-								{{item.url}}
-								<view><image :src="item.url" ></view>
-							</li> -->
 							<li v-for="item in resdetail.accidentImg" :key="item" @click="windShow('1')">
 								<view>
 									<image :src="item" ></image>
@@ -243,8 +239,6 @@
 					eventNo:this.eventNo
 				}).then((res)=>{
 					this.resdetail = res.data
-					let aaa =  
-					console.log(aaa)
 					this.resdetail.accidentImg = this.resdetail.accidentImg.split("__")
 					this.resdetail.assertImg = this.resdetail.assertImg.split("__")
 					this.resdetail.repairImg = this.resdetail.repairImg.split("__")

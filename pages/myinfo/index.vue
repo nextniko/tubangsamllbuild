@@ -17,7 +17,7 @@
 					<label>
 						救助剩余额度：<span class="coloryellow">{{resdetail.myinfo.carList[0].amtCompensation}}</span>元
 					</label>
-					<text v-if="resdetail.myinfo.carList[0].status!==20&&resdetail.myinfo.carList.length!=0"  class="myguaranteetime">已加入互助{{resdetail.myinfo.joinDay}}天</text>
+					<text v-if="resdetail.myinfo.carList[0].status===20"  class="myguaranteetime">已加入互助{{resdetail.myinfo.joinDay}}天</text>
 				</p>
 				<p class="mymoney">
 					<text v-if="resdetail.myinfo.carList.length==0" class="coloryellow">未绑定车辆</text>
